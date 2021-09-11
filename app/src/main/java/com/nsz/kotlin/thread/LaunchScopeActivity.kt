@@ -12,8 +12,7 @@ import okhttp3.Request
 
 class LaunchScopeActivity : AppCompatActivity(), CoroutineScope by MainScope() {
 
-    private val url =
-        "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1585249997251&di=7366cfcc958d7af6470d111fccf09148&imgtype=0&src=http%3A%2F%2Ft8.baidu.com%2Fit%2Fu%3D1484500186%2C1503043093%26fm%3D79%26app%3D86%26f%3DJPEG%3Fw%3D1280%26h%3D853"
+    private val url = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1585249997251&di=7366cfcc958d7af6470d111fccf09148&imgtype=0&src=http%3A%2F%2Ft8.baidu.com%2Fit%2Fu%3D1484500186%2C1503043093%26fm%3D79%26app%3D86%26f%3DJPEG%3Fw%3D1280%26h%3D853"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
