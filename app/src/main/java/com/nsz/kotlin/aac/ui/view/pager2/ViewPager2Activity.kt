@@ -3,26 +3,27 @@ package com.nsz.kotlin.aac.ui.view.pager2
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.nsz.kotlin.R
-import kotlinx.android.synthetic.main.activity_acc_ui_pager2.*
-import org.jetbrains.anko.startActivity
+import com.nsz.kotlin.databinding.ActivityAccUiPager2Binding
+import com.nsz.kotlin.ux.common.extension.startActivity
 
 class ViewPager2Activity : AppCompatActivity(), View.OnClickListener {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    private val binding: ActivityAccUiPager2Binding by lazy { ActivityAccUiPager2Binding.inflate(layoutInflater) }
+
+    override fun onCreate(savedInstanceState: Bundle ? ) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_acc_ui_pager2)
+        setContentView(binding.root)
         initView()
     }
 
     private fun initView() {
-        mb_vertical.setOnClickListener(this)
-        mb_fragment.setOnClickListener(this)
+        binding.mbVertical.setOnClickListener(this)
+        binding.mbFragment.setOnClickListener(this)
     }
 
-    override fun onClick(v: View?) {
+    override fun onClick(v: View ? ) {
         when (v) {
-            mb_vertical -> startActivity<ViewPager2VerticalActivity>()
+            binding.mbVertical -> startActivity<ViewPager2VerticalActivity>()
         }
     }
 

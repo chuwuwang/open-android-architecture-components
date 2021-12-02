@@ -2,23 +2,22 @@ package com.nsz.kotlin.aac.ui.animation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.nsz.kotlin.R
 import com.nsz.kotlin.aac.ui.animation.interpolator.BounceInterpolatorActivity
-import kotlinx.android.synthetic.main.activity_aac_ui_animation.*
-import org.jetbrains.anko.startActivity
+import com.nsz.kotlin.databinding.ActivityAacUiAnimationBinding
+import com.nsz.kotlin.ux.common.extension.startActivity
 
 class AnimationActivity : AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    private val binding: ActivityAacUiAnimationBinding by lazy { ActivityAacUiAnimationBinding.inflate(layoutInflater) }
+
+    override fun onCreate(savedInstanceState: Bundle ? ) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_aac_ui_animation)
+        setContentView(binding.root)
         initView()
     }
 
     private fun initView() {
-        mb_bounce_interpolator.setOnClickListener {
-            startActivity<BounceInterpolatorActivity>()
-        }
+        binding.mbBounceInterpolator.setOnClickListener { startActivity<BounceInterpolatorActivity>() }
     }
 
 }

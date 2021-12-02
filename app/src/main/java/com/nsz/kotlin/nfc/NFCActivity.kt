@@ -2,25 +2,22 @@ package com.nsz.kotlin.nfc
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.nsz.kotlin.R
-import kotlinx.android.synthetic.main.activity_nfc.*
-import org.jetbrains.anko.startActivity
+import com.nsz.kotlin.databinding.ActivityNfcBinding
+import com.nsz.kotlin.ux.common.extension.startActivity
 
 class NFCActivity : AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    private val binding: ActivityNfcBinding by lazy { ActivityNfcBinding.inflate(layoutInflater) }
+
+    override fun onCreate(savedInstanceState: Bundle ? ) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_nfc)
+        setContentView(binding.root)
         initView()
     }
 
     private fun initView() {
-        mb_hce.setOnClickListener {
-            startActivity<HCEActivity>()
-        }
-        mb_read_m1_card.setOnClickListener {
-            startActivity<ReaderM1CardActivity>()
-        }
+        binding.mbHce.setOnClickListener { startActivity<HCEActivity>() }
+        binding.mbReadM1Card.setOnClickListener { startActivity<ReaderM1CardActivity>() }
     }
 
 }

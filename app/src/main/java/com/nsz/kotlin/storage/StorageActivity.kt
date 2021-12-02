@@ -2,21 +2,22 @@ package com.nsz.kotlin.storage
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.nsz.kotlin.R
-import kotlinx.android.synthetic.main.activity_storage.*
-import org.jetbrains.anko.startActivity
+import com.nsz.kotlin.databinding.ActivityStorageBinding
+import com.nsz.kotlin.ux.common.extension.startActivity
 
 class StorageActivity : AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    private val binding: ActivityStorageBinding by lazy { ActivityStorageBinding.inflate(layoutInflater) }
+
+    override fun onCreate(savedInstanceState: Bundle ? ) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_storage)
+        setContentView(binding.root)
         initView()
     }
 
     private fun initView() {
-        mb_saf.setOnClickListener { startActivity<SAFActivity>() }
-        mb_internal_and_external.setOnClickListener { startActivity<ScopedStorageActivity>() }
+        binding.mbSaf.setOnClickListener { startActivity<SAFActivity>() }
+        binding.mbInternalAndExternal.setOnClickListener { startActivity<ScopedStorageActivity>() }
     }
 
 }

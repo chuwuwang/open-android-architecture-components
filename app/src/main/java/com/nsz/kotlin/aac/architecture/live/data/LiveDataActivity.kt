@@ -7,18 +7,19 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
-import com.nsz.kotlin.R
-import kotlinx.android.synthetic.main.activity_aac_architecture_live_data.*
+import com.nsz.kotlin.databinding.ActivityAacArchitectureLiveDataBinding
 
 class LiveDataActivity : AppCompatActivity() {
+
+    private val binding: ActivityAacArchitectureLiveDataBinding by lazy { ActivityAacArchitectureLiveDataBinding.inflate(layoutInflater) }
 
     private val initLiveData = MutableLiveData("hello")
     private val periodLiveDat = MutableLiveData<String>()
     private val studentLiveData = MutableLiveData<Student>()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle ? ) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_aac_architecture_live_data)
+        setContentView(binding.root)
         initView()
         loopData()
     }
@@ -47,25 +48,21 @@ class LiveDataActivity : AppCompatActivity() {
     }
 
     private fun initView() {
-        initLiveData.observe(this,
-            Observer {
-                Log.d("lz", "LiveData initLiveData: $it")
-                tv_live_data_1.text = it
-            }
-        )
+        initLiveData.observe(this) {
+            Log.d("lz", "LiveData initLiveData: $it")
+            binding.tvLiveData1.text = it
+        }
         periodLiveDat.observeForever(observeForever)
-        studentLiveData.observe(this,
-            Observer { value ->
-                val age = value.age
-                val name = value.name
-                tv_live_data_2.text = "name: $name age: $age"
-            }
-        )
+        studentLiveData.observe(this) { value ->
+            val age = value.age
+            val name = value.name
+            binding.tvLiveData2.text = "name: $name age: $age"
+        }
     }
 
     private val observeForever = Observer<String> {
         Log.d("lz", "LiveData observeForever: $it")
-        tv_live_data_3.text = it
+        binding.tvLiveData3.text = it
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {

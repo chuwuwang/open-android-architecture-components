@@ -29,7 +29,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -37,67 +39,112 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".storage.SAFActivity" />
-        <activity android:name=".storage.StorageActivity" />
-        <activity android:name=".storage.ScopedStorageActivity" />
+        <activity
+            android:name=".storage.SAFActivity"
+            android:exported="false" />
+        <activity
+            android:name=".storage.StorageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".storage.ScopedStorageActivity"
+            android:exported="false" />
 
-        <activity android:name=".thread.LaunchScopeActivity" />
+        <activity
+            android:name=".thread.LaunchScopeActivity"
+            android:exported="false" />
 
-        <activity android:name=".spannable.SpannableStringActivity" />
+        <activity
+            android:name=".spannable.SpannableStringActivity"
+            android:exported="false" />
 
         <!-- Android Architecture Components -->
-        <activity android:name=".aac.AndroidArchitectureComponentsActivity" />
+        <activity
+            android:name=".aac.AndroidArchitectureComponentsActivity"
+            android:exported="false" />
 
         <!--/////////////////////////////////////////////////////////////////////////////////////-->
         <!--//////////////////////////////// Architecture ///////////////////////////////////////-->
-        <activity android:name=".aac.architecture.ArchitectureActivity" />
+        <activity
+            android:name=".aac.architecture.ArchitectureActivity"
+            android:exported="false" />
 
         <!-- Room -->
-        <activity android:name=".aac.architecture.room.RoomActivity" />
+        <activity
+            android:name=".aac.architecture.room.RoomActivity"
+            android:exported="false" />
 
         <!-- Paging -->
-        <activity android:name=".aac.architecture.paging.PagingActivity" />
+        <activity
+            android:name=".aac.architecture.paging.PagingActivity"
+            android:exported="false" />
 
         <!-- LiveData -->
-        <activity android:name=".aac.architecture.live.data.LiveDataActivity" />
+        <activity
+            android:name=".aac.architecture.live.data.LiveDataActivity"
+            android:exported="false" />
 
         <!-- DataStore -->
-        <activity android:name=".aac.architecture.data.store.DataStoreActivity" />
+        <activity
+            android:name=".aac.architecture.data.store.DataStoreActivity"
+            android:exported="false" />
 
         <!-- Lifecycle -->
-        <activity android:name=".aac.architecture.lifecycle.LifecycleActivity" />
+        <activity
+            android:name=".aac.architecture.lifecycle.LifecycleActivity"
+            android:exported="false" />
 
         <!-- ViewMode -->
         <activity android:name=".aac.architecture.view.model.ViewModelActivity" />
 
-        <service android:name=".aac.architecture.foreground.service.ForegroundService" />
-        <activity android:name=".aac.architecture.foreground.service.ForegroundServiceActivity" />
+        <service
+            android:name=".aac.architecture.foreground.service.ForegroundService"
+            android:exported="false" />
+        <activity
+            android:name=".aac.architecture.foreground.service.ForegroundServiceActivity"
+            android:exported="false" />
 
         <!-- DataBinding -->
-        <activity android:name=".aac.architecture.data.binding.DataBindingActivity" />
-        <activity android:name=".aac.architecture.data.binding.DataBindingRecyclerViewActivity" />
+        <activity
+            android:name=".aac.architecture.data.binding.DataBindingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".aac.architecture.data.binding.DataBindingRecyclerViewActivity"
+            android:exported="false" />
         <!--/////////////////////////////////////////////////////////////////////////////////////-->
         <!--/////////////////////////////////////////////////////////////////////////////////////-->
 
         <!--/////////////////////////////////////////////////////////////////////////////////////-->
         <!--////////////////////////////////// UI ///////////////////////////////////////////////-->
-        <activity android:name=".aac.ui.UIActivity" />
+        <activity
+            android:name=".aac.ui.UIActivity"
+            android:exported="false" />
         <!--/////////////////////////////////////////////////////////////////////////////////////-->
         <!--/////////////////////////////////////////////////////////////////////////////////////-->
 
         <!-- Animation -->
-        <activity android:name=".aac.ui.animation.AnimationActivity" />
-        <activity android:name=".aac.ui.animation.interpolator.BounceInterpolatorActivity" />
+        <activity
+            android:name=".aac.ui.animation.AnimationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".aac.ui.animation.interpolator.BounceInterpolatorActivity"
+            android:exported="false" />
 
         <!-- ViewPager2 -->
-        <activity android:name=".aac.ui.view.pager2.ViewPager2Activity" />
-        <activity android:name=".aac.ui.view.pager2.ViewPager2VerticalActivity" />
+        <activity
+            android:name=".aac.ui.view.pager2.ViewPager2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".aac.ui.view.pager2.ViewPager2VerticalActivity"
+            android:exported="false" />
 
         <!--/////////////////////////////////////////////////////////////////////////////////////-->
         <!--////////////////////////////// NFC Function /////////////////////////////////////////-->
-        <activity android:name=".nfc.NFCActivity" />
+        <activity
+            android:name=".nfc.NFCActivity"
+            android:exported="false" />
         <activity
             android:name=".nfc.ReaderM1CardActivity"
+            android:exported="true"
             android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.nfc.action.ACTION_NDEF_DISCOVERED" />
@@ -114,7 +161,10 @@
                 android:name="android.nfc.action.TECH_DISCOVERED"
                 android:resource="@xml/nfc_tech_filter" />
         </activity>
-        <activity android:name=".nfc.HCEActivity" />
+        <activity
+            android:name=".nfc.HCEActivity"
+            android:exported="false" />
+
         <service
             android:name=".nfc.HCEService"
             android:exported="true"
@@ -131,8 +181,12 @@
 
         <!--/////////////////////////////////////////////////////////////////////////////////////-->
         <!--////////////////////////////// Open Source /////////////////////////////////////////-->
-        <activity android:name=".open.source.OpenSourceActivity" />
-        <activity android:name=".open.source.realm.RealmActivity" />
+        <activity
+            android:name=".open.source.OpenSourceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".open.source.realm.RealmActivity"
+            android:exported="false" />
         <!--/////////////////////////////////////////////////////////////////////////////////////-->
         <!--/////////////////////////////////////////////////////////////////////////////////////-->
     </application>

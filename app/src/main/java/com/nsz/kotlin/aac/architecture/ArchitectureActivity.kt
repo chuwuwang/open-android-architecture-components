@@ -2,7 +2,6 @@ package com.nsz.kotlin.aac.architecture
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.nsz.kotlin.R
 import com.nsz.kotlin.aac.architecture.data.binding.DataBindingActivity
 import com.nsz.kotlin.aac.architecture.data.binding.DataBindingRecyclerViewActivity
 import com.nsz.kotlin.aac.architecture.data.store.DataStoreActivity
@@ -12,48 +11,30 @@ import com.nsz.kotlin.aac.architecture.live.data.LiveDataActivity
 import com.nsz.kotlin.aac.architecture.paging.PagingActivity
 import com.nsz.kotlin.aac.architecture.room.RoomActivity
 import com.nsz.kotlin.aac.architecture.view.model.ViewModelActivity
-import kotlinx.android.synthetic.main.activity_aac_architecture.*
-import org.jetbrains.anko.startActivity
+import com.nsz.kotlin.databinding.ActivityAacArchitectureBinding
+import com.nsz.kotlin.ux.common.extension.startActivity
 
 class ArchitectureActivity : AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    private val binding: ActivityAacArchitectureBinding by lazy { ActivityAacArchitectureBinding.inflate(layoutInflater) }
+
+    override fun onCreate(savedInstanceState: Bundle ? ) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_aac_architecture)
+        setContentView(binding.root)
         initView()
     }
 
     private fun initView() {
-        mb_room.setOnClickListener {
-            startActivity<RoomActivity>()
-        }
-        mb_paging.setOnClickListener {
-            startActivity<PagingActivity>()
-        }
-        mb_live_data.setOnClickListener {
-            startActivity<LiveDataActivity>()
-        }
-        mb_data_store.setOnClickListener {
-            startActivity<DataStoreActivity>()
-        }
-        mb_lifecycle.setOnClickListener {
-            startActivity<LifecycleActivity>()
-        }
-        mb_view_model.setOnClickListener {
-            startActivity<ViewModelActivity>()
-        }
-        mb_navigation.setOnClickListener {
-
-        }
-        mb_data_binding.setOnClickListener {
-            startActivity<DataBindingActivity>()
-        }
-        mb_foreground_service.setOnClickListener {
-            startActivity<ForegroundServiceActivity>()
-        }
-        mb_data_binding_recycler_view.setOnClickListener {
-            startActivity<DataBindingRecyclerViewActivity>()
-        }
+        binding.mbRoom.setOnClickListener { startActivity<RoomActivity>() }
+        binding.mbPaging.setOnClickListener { startActivity<PagingActivity>() }
+        binding.mbLiveData.setOnClickListener { startActivity<LiveDataActivity>() }
+        binding.mbDataStore.setOnClickListener { startActivity<DataStoreActivity>() }
+        binding.mbLifecycle.setOnClickListener { startActivity<LifecycleActivity>() }
+        binding.mbViewModel.setOnClickListener { startActivity<ViewModelActivity>() }
+        binding.mbNavigation.setOnClickListener {  }
+        binding.mbDataBinding.setOnClickListener { startActivity<DataBindingActivity>() }
+        binding.mbForegroundService.setOnClickListener { startActivity<ForegroundServiceActivity>() }
+        binding.mbDataBindingRecyclerView.setOnClickListener { startActivity<DataBindingRecyclerViewActivity>() }
     }
 
 }

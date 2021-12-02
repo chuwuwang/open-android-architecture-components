@@ -2,33 +2,26 @@ package com.nsz.kotlin.aac.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.nsz.kotlin.R
 import com.nsz.kotlin.aac.ui.animation.AnimationActivity
 import com.nsz.kotlin.aac.ui.view.pager2.ViewPager2Activity
-import kotlinx.android.synthetic.main.activity_aac_ui.*
-import org.jetbrains.anko.startActivity
+import com.nsz.kotlin.databinding.ActivityAacUiBinding
+import com.nsz.kotlin.ux.common.extension.startActivity
 
 class UIActivity : AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    private val binding: ActivityAacUiBinding by lazy { ActivityAacUiBinding.inflate(layoutInflater) }
+
+    override fun onCreate(savedInstanceState: Bundle ? ) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_aac_ui)
+        setContentView(binding.root)
         initView()
     }
 
     private fun initView() {
-        mb_animation.setOnClickListener {
-            startActivity<AnimationActivity>()
-        }
-        mb_transitions.setOnClickListener {
-
-        }
-        mb_fragment.setOnClickListener {
-
-        }
-        mb_view_pager2.setOnClickListener {
-            startActivity<ViewPager2Activity>()
-        }
+        binding.mbAnimation.setOnClickListener { startActivity<AnimationActivity>() }
+        binding.mbTransitions.setOnClickListener {}
+        binding.mbFragment.setOnClickListener {}
+        binding.mbViewPager2.setOnClickListener { startActivity<ViewPager2Activity>() }
     }
 
 }

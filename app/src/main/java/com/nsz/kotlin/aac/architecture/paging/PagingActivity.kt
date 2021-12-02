@@ -3,43 +3,38 @@ package com.nsz.kotlin.aac.architecture.paging
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
-import com.nsz.kotlin.R
+import com.nsz.kotlin.databinding.ActivityAacArchitecturePagingBinding
 import com.nsz.kotlin.ux.common.CommonLog
-import kotlinx.android.synthetic.main.activity_aac_architecture_paging.*
 
 class PagingActivity : AppCompatActivity() {
 
+    private val binding: ActivityAacArchitecturePagingBinding by lazy { ActivityAacArchitecturePagingBinding.inflate(layoutInflater) }
+
     private val viewModel by viewModels<CheeseViewModel>()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle ? ) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_aac_architecture_paging)
+        setContentView(binding.root)
         initView()
     }
 
     private fun initView() {
         val cheeseAdapter = CheeseAdapter()
-        recycler_view.adapter = cheeseAdapter
-
-        viewModel.allCheeseList.observe(this,
-            Observer {
-                cheeseAdapter.submitList(it)
-            }
-        )
-
-        btn_add.setOnClickListener {
-            val inputText = edit_input.text.toString()
+        binding.recyclerView.adapter = cheeseAdapter
+        viewModel.allCheeseList.observe(this) {
+            cheeseAdapter.submitList(it)
+        }
+        binding.btnAdd.setOnClickListener {
+            val inputText = binding.editInput.text.toString()
             val notBlank = inputText.isNotBlank()
             if (notBlank) {
                 viewModel.insert(inputText)
-                edit_input.setText("")
+                binding.editInput.setText("")
             }
         }
-
-        ItemTouchHelper(itemTouchHelperCallback).attachToRecyclerView(recycler_view)
+        ItemTouchHelper(itemTouchHelperCallback).attachToRecyclerView(binding.recyclerView)
     }
 
     private val itemTouchHelperCallback = object : ItemTouchHelper.Callback() {

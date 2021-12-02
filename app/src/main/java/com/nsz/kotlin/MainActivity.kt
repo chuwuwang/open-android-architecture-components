@@ -5,44 +5,35 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.kotlin.demo.proto.LoginInfo
 import com.nsz.kotlin.aac.AndroidArchitectureComponentsActivity
+import com.nsz.kotlin.databinding.ActivityMainBinding
 import com.nsz.kotlin.nfc.NFCActivity
 import com.nsz.kotlin.open.source.OpenSourceActivity
 import com.nsz.kotlin.spannable.SpannableStringActivity
 import com.nsz.kotlin.storage.StorageActivity
 import com.nsz.kotlin.thread.LaunchScopeActivity
-import kotlinx.android.synthetic.main.activity_main.*
-import org.jetbrains.anko.startActivity
+import com.nsz.kotlin.ux.common.extension.startActivity
 
 class MainActivity : AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    private val binding: ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
+    override fun onCreate(savedInstanceState: Bundle ? ) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
         initView()
     }
 
     private fun initView() {
         LoginInfo.Login.newBuilder().setAccount("01").setPassword("123456").build()
-
-        mb_scoped_storage.setOnClickListener {
+        binding.mbScopedStorage.setOnClickListener {
             val intent = Intent(this@MainActivity, StorageActivity::class.java)
             startActivity(intent)
         }
-        mb_thread.setOnClickListener {
-            startActivity<LaunchScopeActivity>()
-        }
-        mb_spannable_string.setOnClickListener {
-            startActivity<SpannableStringActivity>()
-        }
-        mb_aac.setOnClickListener {
-            startActivity<AndroidArchitectureComponentsActivity>()
-        }
-        mb_nfc.setOnClickListener {
-            startActivity<NFCActivity>()
-        }
-        mb_open_source.setOnClickListener {
-            startActivity<OpenSourceActivity>()
-        }
+        binding.mbThread.setOnClickListener { startActivity<LaunchScopeActivity>() }
+        binding.mbSpannableString.setOnClickListener { startActivity<SpannableStringActivity>() }
+        binding.mbAac.setOnClickListener { startActivity<AndroidArchitectureComponentsActivity>() }
+        binding.mbNfc.setOnClickListener { startActivity<NFCActivity>() }
+        binding.mbOpenSource.setOnClickListener { startActivity<OpenSourceActivity>() }
     }
 
 }

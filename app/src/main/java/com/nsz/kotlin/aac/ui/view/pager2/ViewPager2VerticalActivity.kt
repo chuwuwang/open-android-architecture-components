@@ -9,34 +9,32 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.nsz.kotlin.R
-import kotlinx.android.synthetic.main.activity_acc_ui_pager2_vertical.*
+import com.nsz.kotlin.databinding.ActivityAccUiPager2VerticalBinding
 
 class ViewPager2VerticalActivity : AppCompatActivity() {
 
-    private val list =
-        mutableListOf("#FFFF00", "#FF0000", "#AAFF00", "#FF44FF", "#EEFFEE", "#EEE000")
+    private val binding: ActivityAccUiPager2VerticalBinding by lazy { ActivityAccUiPager2VerticalBinding.inflate(layoutInflater) }
+    private val list = mutableListOf("#FFFF00", "#FF0000", "#AAFF00", "#FF44FF", "#EEFFEE", "#EEE000")
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle ? ) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_acc_ui_pager2_vertical)
+        setContentView(binding.root)
         initView()
     }
 
     private fun initView() {
         list.add("")
         val pagerAdapter = PagerAdapter()
-        view_pager2.adapter = pagerAdapter
-
-        radio_group.setOnCheckedChangeListener { _, id ->
+        binding.viewPager2.adapter = pagerAdapter
+        binding.radioGroup.setOnCheckedChangeListener { _, id ->
             when (id) {
-                R.id.rb_vertical -> view_pager2.orientation = ViewPager2.ORIENTATION_VERTICAL
-                R.id.rb_horizontal -> view_pager2.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+                R.id.rb_vertical -> binding.viewPager2.orientation = ViewPager2.ORIENTATION_VERTICAL
+                R.id.rb_horizontal -> binding.viewPager2.orientation = ViewPager2.ORIENTATION_HORIZONTAL
             }
         }
-
         // 禁止滑动
-        cb_is_user_input_enabled.setOnCheckedChangeListener { _, b ->
-            view_pager2.isUserInputEnabled = b
+        binding.cbIsUserInputEnabled.setOnCheckedChangeListener { _, b ->
+            binding.viewPager2.isUserInputEnabled = b
         }
     }
 

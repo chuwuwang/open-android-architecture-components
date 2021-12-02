@@ -3,24 +3,22 @@ package com.nsz.kotlin.aac.architecture.room
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.nsz.kotlin.R
-import kotlinx.android.synthetic.main.activity_aac_architecture_room.*
+import com.nsz.kotlin.databinding.ActivityAacArchitectureRoomBinding
 
 class RoomActivity : AppCompatActivity(), UserView {
 
-    private val userPresenter by lazy {
-        UserPresenter(this, this)
-    }
+    private val userPresenter by lazy { UserPresenter(this, this) }
+    private val binding: ActivityAacArchitectureRoomBinding by lazy { ActivityAacArchitectureRoomBinding.inflate(layoutInflater) }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle ? ) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_aac_architecture_room)
+        setContentView(binding.root)
         initView()
     }
 
     private fun initView() {
-        mb_update_user.setOnClickListener {
-            val updateName = edit_user_name_input.text.toString()
+        binding.mbUpdateUser.setOnClickListener {
+            val updateName = binding.editUserNameInput.text.toString()
             userPresenter.updateUserName(updateName)
         }
     }
@@ -36,12 +34,12 @@ class RoomActivity : AppCompatActivity(), UserView {
     }
 
     override fun showUserName(userName: String) {
-        tv_user_name.visibility = View.VISIBLE
-        tv_user_name.text = userName
+        binding.tvUserName.visibility = View.VISIBLE
+        binding.tvUserName.text = userName
     }
 
     override fun hideUserName() {
-        tv_user_name.visibility = View.INVISIBLE
+        binding.tvUserName.visibility = View.INVISIBLE
     }
 
 }

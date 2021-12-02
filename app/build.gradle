@@ -97,8 +97,8 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:2.3.5"
 
     // 协程
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2"
 
     // Hilt
     def hilt_version = "1.0.0"
@@ -110,10 +110,6 @@ dependencies {
     implementation 'com.facebook.stetho:stetho:1.6.0'
 
     implementation 'com.squareup.okhttp3:okhttp:4.9.1'
-
-    implementation "org.jetbrains.anko:anko-design:0.10.8"
-    implementation "org.jetbrains.anko:anko-commons:0.10.8"
-    implementation "org.jetbrains.anko:anko-appcompat-v7:0.10.8"
 }
 
 protobuf {
