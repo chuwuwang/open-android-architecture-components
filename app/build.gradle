@@ -1,20 +1,20 @@
-apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application'
 
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+    id 'kotlin-android'
 
-apply plugin: 'kotlin-kapt'
+    id 'realm-android'
 
-apply plugin: 'realm-android'
-
-apply plugin: 'com.google.protobuf'
+    id 'com.google.protobuf'
+}
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
     defaultConfig {
         applicationId "com.sea.kotlin"
         minSdkVersion 21
-        targetSdkVersion 30
+        targetSdkVersion 31
         versionCode 3
         versionName "1.1.3"
         javaCompileOptions {
@@ -41,14 +41,14 @@ android {
     }
 
     buildFeatures {
-        dataBinding = true
-        viewBinding = true
+        viewBinding true
+        dataBinding true
     }
     kapt {
         generateStubs = true
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = '1.8'
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -62,36 +62,35 @@ configurations {
 
 dependencies {
     implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
-    implementation 'androidx.core:core-ktx:1.6.0'
-    implementation 'androidx.appcompat:appcompat:1.3.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     // lifecycle
-    implementation "androidx.lifecycle:lifecycle-common:2.3.1"
-    implementation "androidx.lifecycle:lifecycle-service:2.3.1"
+    implementation "androidx.lifecycle:lifecycle-common:2.4.0"
+    implementation "androidx.lifecycle:lifecycle-service:2.4.0"
     implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
-
     // view model
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0"
     // live data
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.1"
-    implementation "androidx.lifecycle:lifecycle-livedata-core-ktx:2.3.1"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0"
+    implementation "androidx.lifecycle:lifecycle-livedata-core-ktx:2.4.0"
 
     // room
     implementation "androidx.room:room-runtime:2.3.0"
 
     // data store
-    implementation "androidx.datastore:datastore:1.0.0-beta01"
+    implementation "androidx.datastore:datastore:1.0.0"
 
     // activity
-    implementation "androidx.activity:activity-ktx:1.3.1"
+    implementation "androidx.activity:activity-ktx:1.4.0"
 
     // ViewPager2
     implementation "androidx.viewpager2:viewpager2:1.0.0"
 
     // paging
-    implementation "androidx.paging:paging-runtime-ktx:3.0.1"
+    implementation "androidx.paging:paging-runtime-ktx:3.1.0"
 
     // navigation
     implementation "androidx.navigation:navigation-ui-ktx:2.3.5"
