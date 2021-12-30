@@ -12,7 +12,7 @@ import okhttp3.Request
 class LaunchScopeActivity : AppCompatActivity(), CoroutineScope by MainScope() {
 
     private val binding: ActivityLaunchScopeBinding by lazy { ActivityLaunchScopeBinding.inflate(layoutInflater) }
-    private val url = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1585249997251&di=7366cfcc958d7af6470d111fccf09148&imgtype=0&src=http%3A%2F%2Ft8.baidu.com%2Fit%2Fu%3D1484500186%2C1503043093%26fm%3D79%26app%3D86%26f%3DJPEG%3Fw%3D1280%26h%3D853"
+    private val url = "https://th.bing.com/th/id/R.7d541c7a926e1453fb61576e308cfd7a?rik=ZlN4Gfd8hjJGHw&riu=http%3a%2f%2fup.deskcity.org%2fpic_source%2f7d%2f54%2f1c%2f7d541c7a926e1453fb61576e308cfd7a.jpg&ehk=vZ950PKjcMoEvEDNigd6u0zBPiJPh6syEBp9RP4Z1t4%3d&risl=&pid=ImgRaw&r=0"
 
     override fun onCreate(savedInstanceState: Bundle ? ) {
         super.onCreate(savedInstanceState)
