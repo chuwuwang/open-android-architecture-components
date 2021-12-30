@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,28 +7,28 @@
     tools:ignore="HardcodedText">
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/mb_realm"
+        android:id="@+id/mb_ok"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
         android:gravity="center"
-        android:text="Realm"
+        android:text="Test"
         android:textAppearance="?android:attr/textAppearance"
         android:textColor="@android:color/white"
         android:textSize="14sp" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/mb_ussd"
+    <TextView
+        android:id="@+id/content_text"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:gravity="center"
-        android:text="USSD"
-        android:textAppearance="?android:attr/textAppearance"
-        android:textColor="@android:color/white"
-        android:textSize="14sp" />
+        android:lineSpacingExtra="2dp"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        tools:text="阿大发发啥发发发" />
 
-</LinearLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.nsz.kotlin">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.nsz.kotlin"
+    tools:ignore="ScopedStorage">
 
     <uses-feature
         android:name="android.hardware.nfc"
@@ -17,6 +19,8 @@
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
@@ -25,9 +29,9 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="AllowBackup">
 
         <activity
             android:name=".MainActivity"
@@ -62,8 +66,7 @@
             android:name=".aac.AndroidArchitectureComponentsActivity"
             android:exported="false" />
 
-        <!--/////////////////////////////////////////////////////////////////////////////////////-->
-        <!--//////////////////////////////// Architecture ///////////////////////////////////////-->
+        <!-- Architecture -->
         <activity
             android:name=".aac.architecture.ArchitectureActivity"
             android:exported="false" />
@@ -110,16 +113,11 @@
         <activity
             android:name=".aac.architecture.data.binding.DataBindingRecyclerViewActivity"
             android:exported="false" />
-        <!--/////////////////////////////////////////////////////////////////////////////////////-->
-        <!--/////////////////////////////////////////////////////////////////////////////////////-->
 
-        <!--/////////////////////////////////////////////////////////////////////////////////////-->
-        <!--////////////////////////////////// UI ///////////////////////////////////////////////-->
+        <!-- UI -->
         <activity
             android:name=".aac.ui.UIActivity"
             android:exported="false" />
-        <!--/////////////////////////////////////////////////////////////////////////////////////-->
-        <!--/////////////////////////////////////////////////////////////////////////////////////-->
 
         <!-- Animation -->
         <activity
@@ -137,8 +135,7 @@
             android:name=".aac.ui.view.pager2.ViewPager2VerticalActivity"
             android:exported="false" />
 
-        <!--/////////////////////////////////////////////////////////////////////////////////////-->
-        <!--////////////////////////////// NFC Function /////////////////////////////////////////-->
+        <!-- NFC Function -->
         <activity
             android:name=".nfc.NFCActivity"
             android:exported="false" />
@@ -176,19 +173,18 @@
                 android:name="android.nfc.cardemulation.host_apdu_service"
                 android:resource="@xml/nfc_hce_aid_group" />
         </service>
-        <!--/////////////////////////////////////////////////////////////////////////////////////-->
-        <!--/////////////////////////////////////////////////////////////////////////////////////-->
 
-        <!--/////////////////////////////////////////////////////////////////////////////////////-->
-        <!--////////////////////////////// Open Source /////////////////////////////////////////-->
+        <!-- Open Source -->
         <activity
             android:name=".open.source.OpenSourceActivity"
             android:exported="false" />
         <activity
+            android:name=".open.source.UssdActivity"
+            android:exported="false" />
+        <activity
             android:name=".open.source.realm.RealmActivity"
             android:exported="false" />
-        <!--/////////////////////////////////////////////////////////////////////////////////////-->
-        <!--/////////////////////////////////////////////////////////////////////////////////////-->
+
     </application>
 
 </manifest>

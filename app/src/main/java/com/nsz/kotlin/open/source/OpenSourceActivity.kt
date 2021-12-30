@@ -17,6 +17,7 @@ class OpenSourceActivity : AppCompatActivity() {
     }
 
     private fun initView() {
+        binding.mbUssd.setOnClickListener { startActivity<UssdActivity>() }
         binding.mbRealm.setOnClickListener { startActivity<RealmActivity>() }
     }
 
