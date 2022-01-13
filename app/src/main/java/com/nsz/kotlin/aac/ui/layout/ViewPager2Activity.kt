@@ -1,4 +1,4 @@
-package com.nsz.kotlin.aac.ui.view.pager2
+package com.nsz.kotlin.aac.ui.layout
 
 import android.os.Bundle
 import android.view.View

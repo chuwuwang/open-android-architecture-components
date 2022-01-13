@@ -1,4 +1,4 @@
-package com.nsz.kotlin.aac.ui.view.pager2
+package com.nsz.kotlin.aac.ui.layout
 
 import android.graphics.Color
 import android.os.Bundle
@@ -40,7 +40,7 @@ class ViewPager2VerticalActivity : AppCompatActivity() {
 
     inner class PagerAdapter : RecyclerView.Adapter<PagerAdapter.ViewHolder>() {
 
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PagerAdapter.ViewHolder {
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
             val view = View.inflate(parent.context, R.layout.item_acc_ui_pager2_vertical, null)
             view.layoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
             return ViewHolder(view)
@@ -48,7 +48,7 @@ class ViewPager2VerticalActivity : AppCompatActivity() {
 
         override fun getItemCount(): Int = list.size
 
-        override fun onBindViewHolder(holder: PagerAdapter.ViewHolder, position: Int) {
+        override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             val color = list[position]
             if (color !== "") {
                 val parseColor = Color.parseColor(color)

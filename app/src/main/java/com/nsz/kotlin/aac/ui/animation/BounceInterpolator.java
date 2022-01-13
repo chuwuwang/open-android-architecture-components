@@ -1,4 +1,4 @@
-package com.nsz.kotlin.aac.ui.animation.interpolator;
+package com.nsz.kotlin.aac.ui.animation;
 
 import android.view.animation.Interpolator;
 
