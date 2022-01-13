@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_ui_layout"
+    app:startDestination="@id/layoutFragment">
+
+    <fragment
+        android:id="@+id/layoutFragment"
+        android:name="com.nsz.kotlin.aac.ui.layout.LayoutFragment"
+        tools:layout="@layout/fragment_layout">
+        <action
+            android:id="@+id/action_layoutFragment_to_viewPager2Fragment"
+            app:destination="@id/viewPager2Fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/viewPager2Fragment"
+        android:name="com.nsz.kotlin.aac.ui.layout.ViewPager2Fragment"
+        tools:layout="@layout/fragment_layout_pager2">
+        <action
+            android:id="@+id/action_viewPager2Fragment_to_viewPager2VerticalFragment"
+            app:destination="@id/viewPager2VerticalFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/viewPager2VerticalFragment"
+        android:name="com.nsz.kotlin.aac.ui.layout.ViewPager2VerticalFragment"
+        tools:layout="@layout/fragment_layout_pager2_vertical" />
+
+</navigation>

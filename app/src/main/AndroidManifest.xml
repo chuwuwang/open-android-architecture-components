@@ -118,6 +118,9 @@
         <activity
             android:name=".aac.ui.UIActivity"
             android:exported="false" />
+        <activity
+            android:name=".aac.ui.layout.LayoutActivity"
+            android:exported="false" />
 
         <!-- Animation -->
         <activity
@@ -125,14 +128,6 @@
             android:exported="false" />
         <activity
             android:name=".aac.ui.animation.BounceInterpolatorActivity"
-            android:exported="false" />
-
-        <!-- ViewPager2 -->
-        <activity
-            android:name=".aac.ui.layout.ViewPager2Activity"
-            android:exported="false" />
-        <activity
-            android:name=".aac.ui.layout.ViewPager2VerticalActivity"
             android:exported="false" />
 
         <!-- NFC Function -->

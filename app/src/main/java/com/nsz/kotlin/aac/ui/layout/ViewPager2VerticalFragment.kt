@@ -5,20 +5,18 @@ import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.nsz.kotlin.R
-import com.nsz.kotlin.databinding.ActivityAccUiPager2VerticalBinding
+import com.nsz.kotlin.aac.ViewBindingFragment
+import com.nsz.kotlin.databinding.FragmentLayoutPager2VerticalBinding
 
-class ViewPager2VerticalActivity : AppCompatActivity() {
+class ViewPager2VerticalFragment : ViewBindingFragment<FragmentLayoutPager2VerticalBinding>() {
 
-    private val binding: ActivityAccUiPager2VerticalBinding by lazy { ActivityAccUiPager2VerticalBinding.inflate(layoutInflater) }
     private val list = mutableListOf("#FFFF00", "#FF0000", "#AAFF00", "#FF44FF", "#EEFFEE", "#EEE000")
 
-    override fun onCreate(savedInstanceState: Bundle ? ) {
-        super.onCreate(savedInstanceState)
-        setContentView(binding.root)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle ? ) {
+        super.onViewCreated(view, savedInstanceState)
         initView()
     }
 
@@ -38,7 +36,7 @@ class ViewPager2VerticalActivity : AppCompatActivity() {
         }
     }
 
-    inner class PagerAdapter : RecyclerView.Adapter<PagerAdapter.ViewHolder>() {
+    private inner class PagerAdapter : RecyclerView.Adapter<PagerAdapter.ViewHolder>() {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
             val view = View.inflate(parent.context, R.layout.item_acc_ui_pager2_vertical, null)
