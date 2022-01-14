@@ -7,62 +7,38 @@
     tools:ignore="HardcodedText">
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/mb_scoped_storage"
+        android:id="@+id/mb_realm"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:gravity="center"
-        android:text="Scoped Storage"
+        android:text="Realm"
         android:textAppearance="?android:attr/textAppearance"
         android:textColor="@android:color/white"
         android:textSize="14sp" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/mb_thread"
+        android:id="@+id/mb_ussd"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:gravity="center"
-        android:text="协程"
+        android:text="USSD"
         android:textAppearance="?android:attr/textAppearance"
         android:textColor="@android:color/white"
         android:textSize="14sp" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/mb_aac"
+        android:id="@+id/mb_spannable_string"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:gravity="center"
-        android:text="Android Architecture Components"
-        android:textAppearance="?android:attr/textAppearance"
-        android:textColor="@android:color/white"
-        android:textSize="14sp" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/mb_nfc"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:gravity="center"
-        android:text="NFC"
-        android:textAppearance="?android:attr/textAppearance"
-        android:textColor="@android:color/white"
-        android:textSize="14sp" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/mb_open_source"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:gravity="center"
-        android:text="Open Source"
+        android:text="SpannableString"
         android:textAppearance="?android:attr/textAppearance"
         android:textColor="@android:color/white"
         android:textSize="14sp" />

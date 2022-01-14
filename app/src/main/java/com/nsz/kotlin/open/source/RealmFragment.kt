@@ -1,22 +1,22 @@
-package com.nsz.kotlin.open.source.realm
+package com.nsz.kotlin.open.source
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import com.nsz.kotlin.databinding.ActivityOpenSourceRealmBinding
+import android.view.View
+import com.nsz.kotlin.aac.ViewBindingFragment
+import com.nsz.kotlin.databinding.FragmentOpenSourceRealmBinding
 import io.realm.Realm
 
-class RealmActivity : AppCompatActivity() {
+class RealmFragment : ViewBindingFragment<FragmentOpenSourceRealmBinding>() {
 
-    private val binding: ActivityOpenSourceRealmBinding by lazy { ActivityOpenSourceRealmBinding.inflate(layoutInflater) }
     private val realm by lazy { Realm.getDefaultInstance() }
 
-    override fun onCreate(savedInstanceState: Bundle ? ) {
-        super.onCreate(savedInstanceState)
-        setContentView(binding.root)
+    private val dog = Dog()
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle ? ) {
+        super.onViewCreated(view, savedInstanceState)
         initView()
     }
 
-    private val dog = Dog()
     private fun initView() {
         binding.mbOk.setOnClickListener {
             val string = binding.editInput.text.toString()
@@ -34,10 +34,6 @@ class RealmActivity : AppCompatActivity() {
                 binding.tvData.text = stringBuilder.toString()
             }
         }
-    }
-
-    override fun onResume() {
-        super.onResume()
     }
 
     override fun onDestroy() {

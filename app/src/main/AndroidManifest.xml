@@ -57,10 +57,6 @@
             android:name=".thread.LaunchScopeActivity"
             android:exported="false" />
 
-        <activity
-            android:name=".spannable.SpannableStringActivity"
-            android:exported="false" />
-
         <!-- Android Architecture Components -->
         <activity
             android:name=".aac.AndroidArchitectureComponentsActivity"
@@ -175,9 +171,6 @@
             android:exported="false" />
         <activity
             android:name=".open.source.UssdActivity"
-            android:exported="false" />
-        <activity
-            android:name=".open.source.realm.RealmActivity"
             android:exported="false" />
 
     </application>

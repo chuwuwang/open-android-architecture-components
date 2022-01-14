@@ -2,7 +2,6 @@ package com.nsz.kotlin.ux.common.extension
 
 import android.util.Log
 import android.view.View
-import com.nsz.kotlin.spannable.SpannableStringActivity
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlin.coroutines.resume
 

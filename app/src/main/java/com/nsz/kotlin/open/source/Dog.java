@@ -1,4 +1,4 @@
-package com.nsz.kotlin.open.source.realm;
+package com.nsz.kotlin.open.source;
 
 import java.util.UUID;
 

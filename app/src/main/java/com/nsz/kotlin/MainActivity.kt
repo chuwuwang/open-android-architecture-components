@@ -8,7 +8,6 @@ import com.nsz.kotlin.aac.AndroidArchitectureComponentsActivity
 import com.nsz.kotlin.databinding.ActivityMainBinding
 import com.nsz.kotlin.nfc.NFCActivity
 import com.nsz.kotlin.open.source.OpenSourceActivity
-import com.nsz.kotlin.spannable.SpannableStringActivity
 import com.nsz.kotlin.storage.StorageActivity
 import com.nsz.kotlin.thread.LaunchScopeActivity
 import com.nsz.kotlin.ux.common.extension.startActivity
@@ -29,11 +28,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, StorageActivity::class.java)
             startActivity(intent)
         }
-        binding.mbThread.setOnClickListener { startActivity<LaunchScopeActivity>() }
-        binding.mbSpannableString.setOnClickListener { startActivity<SpannableStringActivity>() }
-        binding.mbAac.setOnClickListener { startActivity<AndroidArchitectureComponentsActivity>() }
         binding.mbNfc.setOnClickListener { startActivity<NFCActivity>() }
+        binding.mbThread.setOnClickListener { startActivity<LaunchScopeActivity>() }
         binding.mbOpenSource.setOnClickListener { startActivity<OpenSourceActivity>() }
+        binding.mbAac.setOnClickListener { startActivity<AndroidArchitectureComponentsActivity>() }
     }
 
 }

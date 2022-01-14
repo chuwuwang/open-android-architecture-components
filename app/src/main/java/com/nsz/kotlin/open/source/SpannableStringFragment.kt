@@ -1,4 +1,4 @@
-package com.nsz.kotlin.spannable
+package com.nsz.kotlin.open.source
 
 import android.graphics.Color
 import android.graphics.Typeface
@@ -12,21 +12,18 @@ import android.text.style.*
 import android.util.Log
 import android.view.View
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
-import com.nsz.kotlin.databinding.ActivitySpannableStringBinding
+import com.nsz.kotlin.aac.ViewBindingFragment
+import com.nsz.kotlin.databinding.FragmentOpenSourceSpannableBinding
 import com.nsz.kotlin.ux.common.extension.awaitNextLayout
 import kotlinx.coroutines.launch
 
-class SpannableStringActivity : AppCompatActivity() {
+class SpannableStringFragment : ViewBindingFragment<FragmentOpenSourceSpannableBinding>() {
 
-    private val binding: ActivitySpannableStringBinding by lazy { ActivitySpannableStringBinding.inflate(layoutInflater) }
-
-    override fun onCreate(savedInstanceState: Bundle ? ) {
-        super.onCreate(savedInstanceState)
-        setContentView(binding.root)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle ? ) {
+        super.onViewCreated(view, savedInstanceState)
         initView()
     }
 
@@ -73,7 +70,7 @@ class SpannableStringActivity : AppCompatActivity() {
     private val clickableSpan = object : ClickableSpan() {
 
         override fun onClick(v: View) {
-            Toast.makeText(this@SpannableStringActivity, "hi android", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "hi android", Toast.LENGTH_SHORT).show()
         }
 
         override fun updateDrawState(textPaint: TextPaint) {
