@@ -112,6 +112,8 @@ dependencies {
 
     implementation 'com.squareup.okhttp3:okhttp:4.9.1'
     implementation 'com.github.tiann:epic:0.11.2'
+
+    implementation 'com.koushikdutta.async:androidasync:2.+'
 }
 
 protobuf {

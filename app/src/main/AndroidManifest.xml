@@ -172,6 +172,9 @@
         <activity
             android:name=".open.source.UssdActivity"
             android:exported="false" />
+        <activity
+            android:name=".open.source.AsyncCommunicationActivity"
+            android:exported="false" />
 
     </application>
 

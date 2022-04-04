@@ -43,4 +43,16 @@
         android:textColor="@android:color/white"
         android:textSize="14sp" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mb_async_communication"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="Android Async"
+        android:textAppearance="?android:attr/textAppearance"
+        android:textColor="@android:color/white"
+        android:textSize="14sp" />
+
 </LinearLayout>

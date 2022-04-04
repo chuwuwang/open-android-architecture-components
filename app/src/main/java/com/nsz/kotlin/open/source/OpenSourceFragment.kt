@@ -17,6 +17,7 @@ class OpenSourceFragment : ViewBindingFragment<FragmentOpenSourceBinding>() {
 
     private fun initView() {
         binding.mbUssd.setOnClickListener { startActivity<UssdActivity>() }
+        binding.mbAsyncCommunication.setOnClickListener { startActivity<AsyncCommunicationActivity>() }
         binding.mbRealm.setOnClickListener { findNavController().navigate(R.id.action_openSourceFragment_to_realmFragment) }
         binding.mbSpannableString.setOnClickListener { findNavController().navigate(R.id.action_openSourceFragment_to_spannableStringFragment) }
     }
