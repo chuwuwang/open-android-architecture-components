@@ -1,10 +1,11 @@
 package com.nsz.kotlin.ux.common
 
 import android.util.Log
+import com.nsz.kotlin.App
 
 object CommonLog {
 
-    private const val TAG = "KA"
+    private const val TAG = App.TAG
 
     private const val V = 1
     private const val D = 2
@@ -51,7 +52,7 @@ object CommonLog {
 
     private fun log(type: Int, tag: String, msg: String) {
         val stackTrace = Thread.currentThread().stackTrace
-        val index = 5
+        val index = 4
         val className = stackTrace[index].fileName
         var methodName = stackTrace[index].methodName
         val lineNumber = stackTrace[index].lineNumber
@@ -65,14 +66,14 @@ object CommonLog {
             .append(methodName)
             .append(" ] ")
         sb.append(msg)
-        val logStr = sb.toString()
+        val logString = sb.toString()
         when (type) {
-            V -> Log.v(tag, logStr)
-            D -> Log.d(tag, logStr)
-            I -> Log.i(tag, logStr)
-            W -> Log.w(tag, logStr)
-            E -> Log.e(tag, logStr)
-            else -> Log.e(tag, logStr)
+            V -> Log.v(tag, logString)
+            D -> Log.d(tag, logString)
+            I -> Log.i(tag, logString)
+            W -> Log.w(tag, logString)
+            E -> Log.e(tag, logString)
+            else -> Log.e(tag, logString)
         }
     }
 

@@ -15,13 +15,17 @@
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
@@ -126,8 +130,12 @@
             android:exported="false" />
 
         <!-- Behavior -->
-        <activity android:name=".aac.behavior.BehaviorActivity"
-            android:exported="false"/>
+        <activity
+            android:name=".aac.behavior.BehaviorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".aac.behavior.CameraXActivity"
+            android:exported="false" />
         <!--/////////////////////////////////////////////////////////////////////////////////////-->
 
         <!-- NFC Function -->

@@ -13,6 +13,7 @@ import io.realm.RealmConfiguration
 class App : Application() {
 
     companion object {
+        const val TAG = "strawberry"
         lateinit var instance: App
         lateinit var context: Context
     }

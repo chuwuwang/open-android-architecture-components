@@ -2,7 +2,6 @@ package com.nsz.kotlin
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import com.kotlin.demo.proto.LoginInfo
 import com.nsz.kotlin.aac.AndroidArchitectureComponentsActivity
 import com.nsz.kotlin.databinding.ActivityMainBinding
@@ -12,7 +11,7 @@ import com.nsz.kotlin.storage.StorageActivity
 import com.nsz.kotlin.thread.LaunchScopeActivity
 import com.nsz.kotlin.ux.common.startActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : PermissionsActivity() {
 
     private val binding: ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
