@@ -17,7 +17,7 @@ import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import com.nsz.kotlin.aac.ViewBindingFragment
 import com.nsz.kotlin.databinding.FragmentOpenSourceSpannableBinding
-import com.nsz.kotlin.ux.common.extension.awaitNextLayout
+import com.nsz.kotlin.ux.common.awaitNextLayout
 import kotlinx.coroutines.launch
 
 class SpannableStringFragment : ViewBindingFragment<FragmentOpenSourceSpannableBinding>() {

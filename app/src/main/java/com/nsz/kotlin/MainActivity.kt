@@ -10,7 +10,7 @@ import com.nsz.kotlin.nfc.NFCActivity
 import com.nsz.kotlin.open.source.OpenSourceActivity
 import com.nsz.kotlin.storage.StorageActivity
 import com.nsz.kotlin.thread.LaunchScopeActivity
-import com.nsz.kotlin.ux.common.extension.startActivity
+import com.nsz.kotlin.ux.common.startActivity
 
 class MainActivity : AppCompatActivity() {
 

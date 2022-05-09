@@ -7,7 +7,7 @@
     tools:ignore="HardcodedText">
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/mb_ui"
+        android:id="@+id/ui_btn"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginStart="16dp"
@@ -20,7 +20,7 @@
         android:textSize="14sp" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/mb_behavior"
+        android:id="@+id/behavior_btn"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginStart="16dp"
@@ -32,7 +32,7 @@
         android:textSize="14sp" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/mb_architecture"
+        android:id="@+id/architecture_btn"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginStart="16dp"
@@ -44,7 +44,7 @@
         android:textSize="14sp" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/mb_foundation"
+        android:id="@+id/foundation_btn"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginStart="16dp"

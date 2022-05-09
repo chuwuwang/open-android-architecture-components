@@ -12,7 +12,7 @@ import com.nsz.kotlin.aac.architecture.paging.PagingActivity
 import com.nsz.kotlin.aac.architecture.room.RoomActivity
 import com.nsz.kotlin.aac.architecture.view.model.ViewModelActivity
 import com.nsz.kotlin.databinding.ActivityAacArchitectureBinding
-import com.nsz.kotlin.ux.common.extension.startActivity
+import com.nsz.kotlin.ux.common.startActivity
 
 class ArchitectureActivity : AppCompatActivity() {
 

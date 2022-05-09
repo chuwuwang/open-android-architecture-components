@@ -1,4 +1,4 @@
-package com.nsz.kotlin.ux.common.extension
+package com.nsz.kotlin.ux.common
 
 import android.app.Activity
 import android.content.Context

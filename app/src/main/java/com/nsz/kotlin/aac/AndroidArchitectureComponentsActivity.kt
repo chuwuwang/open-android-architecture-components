@@ -3,9 +3,10 @@ package com.nsz.kotlin.aac
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.nsz.kotlin.aac.architecture.ArchitectureActivity
+import com.nsz.kotlin.aac.behavior.BehaviorActivity
 import com.nsz.kotlin.aac.ui.UIActivity
 import com.nsz.kotlin.databinding.ActivityAacBinding
-import com.nsz.kotlin.ux.common.extension.startActivity
+import com.nsz.kotlin.ux.common.startActivity
 
 class AndroidArchitectureComponentsActivity : AppCompatActivity() {
 
@@ -18,10 +19,10 @@ class AndroidArchitectureComponentsActivity : AppCompatActivity() {
     }
 
     private fun initView() {
-        binding.mbUi.setOnClickListener { startActivity<UIActivity>() }
-        binding.mbBehavior.setOnClickListener {  }
-        binding.mbArchitecture.setOnClickListener { startActivity<ArchitectureActivity>() }
-        binding.mbFoundation.setOnClickListener {  }
+        binding.uiBtn.setOnClickListener { startActivity<UIActivity>() }
+        binding.behaviorBtn.setOnClickListener { startActivity<BehaviorActivity>() }
+        binding.architectureBtn.setOnClickListener { startActivity<ArchitectureActivity>() }
+        binding.foundationBtn.setOnClickListener {  }
     }
 
 }

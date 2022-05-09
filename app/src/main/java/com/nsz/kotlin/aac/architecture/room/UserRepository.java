@@ -2,7 +2,7 @@ package com.nsz.kotlin.aac.architecture.room;
 
 import android.content.Context;
 
-import com.nsz.kotlin.ux.common.executors.AppExecutors;
+import com.nsz.kotlin.ux.common.AppExecutors;
 
 import java.lang.ref.WeakReference;
 import java.util.UUID;

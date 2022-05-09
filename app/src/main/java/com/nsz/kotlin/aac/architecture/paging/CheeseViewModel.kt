@@ -6,7 +6,7 @@ import androidx.paging.Config
 import androidx.paging.PagedList
 import androidx.paging.toLiveData
 import com.nsz.kotlin.ux.common.CommonLog
-import com.nsz.kotlin.ux.common.executors.ioThread
+import com.nsz.kotlin.ux.common.ioThread
 
 class CheeseViewModel(app: Application) : AndroidViewModel(app) {
 

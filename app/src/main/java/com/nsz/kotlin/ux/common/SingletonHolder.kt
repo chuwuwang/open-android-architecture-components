@@ -1,4 +1,4 @@
-package com.nsz.kotlin.ux.common.pattern
+package com.nsz.kotlin.ux.common
 
 class SingletonHolder<out T, in A>(private var creator: (A) -> T) {
 

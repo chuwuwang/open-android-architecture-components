@@ -3,7 +3,7 @@ package com.nsz.kotlin.storage
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.nsz.kotlin.databinding.ActivityStorageBinding
-import com.nsz.kotlin.ux.common.extension.startActivity
+import com.nsz.kotlin.ux.common.startActivity
 
 class StorageActivity : AppCompatActivity() {
 

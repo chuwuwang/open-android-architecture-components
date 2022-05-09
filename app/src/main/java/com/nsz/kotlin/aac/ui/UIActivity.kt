@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.nsz.kotlin.aac.ui.animation.AnimationActivity
 import com.nsz.kotlin.aac.ui.layout.LayoutActivity
 import com.nsz.kotlin.databinding.ActivityAacUiBinding
-import com.nsz.kotlin.ux.common.extension.startActivity
+import com.nsz.kotlin.ux.common.startActivity
 
 class UIActivity : AppCompatActivity() {
 

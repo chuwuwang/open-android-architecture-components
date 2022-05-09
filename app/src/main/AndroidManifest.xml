@@ -117,7 +117,6 @@
         <activity
             android:name=".aac.ui.layout.LayoutActivity"
             android:exported="false" />
-
         <!-- Animation -->
         <activity
             android:name=".aac.ui.animation.AnimationActivity"
@@ -125,6 +124,11 @@
         <activity
             android:name=".aac.ui.animation.BounceInterpolatorActivity"
             android:exported="false" />
+
+        <!-- Behavior -->
+        <activity android:name=".aac.behavior.BehaviorActivity"
+            android:exported="false"/>
+        <!--/////////////////////////////////////////////////////////////////////////////////////-->
 
         <!-- NFC Function -->
         <activity

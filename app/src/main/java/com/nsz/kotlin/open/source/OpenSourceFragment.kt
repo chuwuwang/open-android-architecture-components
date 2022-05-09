@@ -6,7 +6,7 @@ import androidx.navigation.fragment.findNavController
 import com.nsz.kotlin.R
 import com.nsz.kotlin.aac.ViewBindingFragment
 import com.nsz.kotlin.databinding.FragmentOpenSourceBinding
-import com.nsz.kotlin.ux.common.extension.startActivity
+import com.nsz.kotlin.ux.common.startActivity
 
 class OpenSourceFragment : ViewBindingFragment<FragmentOpenSourceBinding>() {
 
