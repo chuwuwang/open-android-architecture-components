@@ -5,16 +5,13 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
-import android.os.Build
-import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
+import android.os.*
 import android.telephony.TelephonyManager
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.nsz.kotlin.databinding.ActivityOpenSourceUssdBinding
-
+import kotlin.concurrent.thread
 
 class UssdActivity : AppCompatActivity() {
 
@@ -27,7 +24,7 @@ class UssdActivity : AppCompatActivity() {
     }
 
     private fun initView() {
-        binding.mbOk.setOnClickListener { sendUssd() }
+        binding.mbOk.setOnClickListener { testSFTP() }
         val encodedHash = Uri.encode("#")
         val ussd = "*130*3621*1146974863110807$encodedHash"
         val parse = Uri.parse("tel:$ussd")
@@ -93,6 +90,16 @@ class UssdActivity : AppCompatActivity() {
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+    }
+
+    private fun testSFTP() {
+        thread {
+            SFTPHelper.connect("20.87.216.88", "flashtraderadmin", "Dbw^hmisjFMLgC*tRu2cAEToHKyNBq", 2222)
+            SFTPHelper.download(
+                "current/HandShaker_1.2.0.apk",
+                Environment.getExternalStorageDirectory().absolutePath + "/Flash/" + System.currentTimeMillis() + ".apk"
+            )
+        }
     }
 
 }
