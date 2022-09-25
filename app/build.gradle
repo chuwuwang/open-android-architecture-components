@@ -15,8 +15,8 @@ android {
         applicationId "com.nsz.ktx.strawberry"
         minSdkVersion 21
         targetSdkVersion 31
-        versionCode 8
-        versionName "1.1.8"
+        versionCode 9
+        versionName "1.1.9"
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [
@@ -69,18 +69,18 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     // activity
-    implementation "androidx.activity:activity-ktx:1.5.0"
+    implementation "androidx.activity:activity-ktx:1.5.1"
     // Lifecycle
-    implementation "androidx.lifecycle:lifecycle-common:2.5.0"
-    implementation "androidx.lifecycle:lifecycle-service:2.5.0"
+    implementation "androidx.lifecycle:lifecycle-common:2.5.1"
+    implementation "androidx.lifecycle:lifecycle-service:2.5.1"
     implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
     // ViewModel
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
     // LiveData
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.5.0"
-    implementation "androidx.lifecycle:lifecycle-livedata-core-ktx:2.5.0"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.5.1"
+    implementation "androidx.lifecycle:lifecycle-livedata-core-ktx:2.5.1"
     // room
-    implementation "androidx.room:room-runtime:2.4.2"
+    implementation "androidx.room:room-runtime:2.4.3"
     // data store
     implementation "androidx.datastore:datastore:1.0.0"
     // ViewPager2
@@ -88,8 +88,8 @@ dependencies {
     // paging
     implementation "androidx.paging:paging-runtime-ktx:3.1.1"
     // navigation
-    implementation "androidx.navigation:navigation-ui-ktx:2.5.0"
-    implementation "androidx.navigation:navigation-fragment-ktx:2.5.0"
+    implementation "androidx.navigation:navigation-ui-ktx:2.5.1"
+    implementation "androidx.navigation:navigation-fragment-ktx:2.5.1"
     // CameraX
     def camerax_version = "1.2.0-alpha03"
     implementation "androidx.camera:camera-core:$camerax_version"
@@ -120,6 +120,8 @@ dependencies {
     implementation 'com.guolindev.permissionx:permissionx:1.6.4'
 
     implementation 'com.jcraft:jsch:0.1.55'
+    implementation 'commons-net:commons-net:3.7.2'
+    implementation 'com.google.android.gms:play-services-auth:20.2.0'
 }
 
 protobuf {

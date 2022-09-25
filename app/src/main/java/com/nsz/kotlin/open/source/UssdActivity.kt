@@ -95,10 +95,7 @@ class UssdActivity : AppCompatActivity() {
     private fun testSFTP() {
         thread {
             SFTPHelper.connect("20.87.216.88", "flashtraderadmin", "Dbw^hmisjFMLgC*tRu2cAEToHKyNBq", 2222)
-            SFTPHelper.download(
-                "current/HandShaker_1.2.0.apk",
-                Environment.getExternalStorageDirectory().absolutePath + "/Flash/" + System.currentTimeMillis() + ".apk"
-            )
+
         }
     }
 
