@@ -3,16 +3,13 @@ package com.nsz.kotlin.open.source;
 import android.annotation.SuppressLint;
 import android.os.Environment;
 
-import com.google.android.gms.security.ProviderInstaller;
 import com.jcraft.jsch.Channel;
 import com.jcraft.jsch.ChannelSftp;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.Session;
 import com.nsz.kotlin.App;
-import com.nsz.kotlin.open.source.ftp.SSLSessionReuseFTPSClient;
 import com.nsz.kotlin.ux.common.CommonLog;
 
-import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPClientConfig;
 import org.apache.commons.net.ftp.FTPReply;
 import org.apache.commons.net.ftp.FTPSClient;
@@ -21,9 +18,7 @@ import org.bouncycastle.util.io.pem.PemReader;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.security.KeyFactory;
 import java.security.KeyStore;
-import java.security.PrivateKey;
 import java.security.SecureRandom;
 import java.security.Security;
 import java.security.cert.CertificateException;
@@ -33,8 +28,6 @@ import java.util.Properties;
 
 import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLEngine;
-import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
@@ -48,16 +41,15 @@ public class SFTPHelper {
 
     public static void connect(String host, String username, String password, int port) {
         try {
-
             // FTPClient ftpsClient = new FTPClient();
             FTPSClient ftpsClient = new FTPSClient();
 
-//            SecureRandom secureRandom = new SecureRandom();
-//            TrustManager[] trustManagers = { x509TrustManager };
-//            SSLContext sslContext = SSLContext.getInstance("SSL");
-//            sslContext.init(null, trustManagers, secureRandom);
-//            // sslContext.init(keyManagerFactory.getKeyManagers(), trustManagerFactory.getTrustManagers(), null);
-//            SSLSocketFactory socketFactory = sslContext.getSocketFactory();
+            // SecureRandom secureRandom = new SecureRandom();
+            // TrustManager[] trustManagers = { x509TrustManager };
+            // SSLContext sslContext = SSLContext.getInstance("SSL");
+            // sslContext.init(null, trustManagers, secureRandom);
+            // sslContext.init(keyManagerFactory.getKeyManagers(), trustManagerFactory.getTrustManagers(), null);
+            // SSLSocketFactory socketFactory = sslContext.getSocketFactory();
             InputStream clientCertInputStream = App.context.getAssets().open("flash_trader_rsa4096");
             SSLSocketFactory socketFactory = createSocketFactory(clientCertInputStream, "");
 
@@ -65,22 +57,6 @@ public class SFTPHelper {
             ftpsClient.setTrustManager(x509TrustManager);
             ftpsClient.setSocketFactory(socketFactory);
 
-            FTPClientConfig config = new FTPClientConfig();
-            ftpsClient.configure(config);
-            ftpsClient.connect(host, port);
-            ftpsClient.login(username, password);
-            int reply = ftpsClient.getReplyCode();
-            boolean positiveCompletion = FTPReply.isPositiveCompletion(reply);
-            CommonLog.e("replyCode:" + reply);
-            CommonLog.e("positiveCompletion:" + positiveCompletion);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static void connectBy(String host, String username, String password, int port) {
-        try {
-            SSLSessionReuseFTPSClient ftpsClient = new SSLSessionReuseFTPSClient();
             FTPClientConfig config = new FTPClientConfig();
             ftpsClient.configure(config);
             ftpsClient.connect(host, port);

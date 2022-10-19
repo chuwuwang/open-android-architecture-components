@@ -13,12 +13,12 @@ suspend fun Animator.awaitEnd() = suspendCancellableCoroutine<Unit> { block ->
     val listener = object : AnimatorListenerAdapter() {
         private var endedSuccessfully = true
 
-        override fun onAnimationCancel(animation: Animator ? ) {
+        override fun onAnimationCancel(animation: Animator) {
             super.onAnimationCancel(animation)
             endedSuccessfully = false
         }
 
-        override fun onAnimationEnd(animation: Animator ? ) {
+        override fun onAnimationEnd(animation: Animator) {
             super.onAnimationEnd(animation)
             if (animation != null) {
                 animation.removeListener(this)

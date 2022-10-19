@@ -44,7 +44,7 @@ spotless {
     kotlin {
         target "**/*.kt"
         ktlint(kt_lint_version).userData(
-                ['max_line_length': '100']
+            ['max_line_length': '100']
         )
     }
 }
