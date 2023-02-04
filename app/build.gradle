@@ -125,7 +125,7 @@ dependencies {
 
 protobuf {
     protoc {
-        if (false) {
+        if (true) {
             artifact = 'com.google.protobuf:protoc:3.0.0'
         } else { // mac m1
             artifact = 'com.google.protobuf:protoc:3.0.0:osx-x86_64'
@@ -133,7 +133,7 @@ protobuf {
     }
     plugins {
         javalite {
-            if (false) {
+            if (true) {
                 artifact = 'com.google.protobuf:protoc-gen-javalite:3.0.0'
             } else {
                 artifact = 'com.google.protobuf:protoc-gen-javalite:3.0.0:osx-x86_64'
