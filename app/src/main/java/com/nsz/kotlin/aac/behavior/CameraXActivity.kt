@@ -56,7 +56,7 @@ class CameraXActivity : PermissionsActivity() {
             } else {
                 CameraSelector.LENS_FACING_BACK
             }
-            setUpCamera()
+            bindCameraUseCases()
         }
         binding.takePhotoBtn.setOnClickListener { takePhoto() }
         binding.startVideoBtn.setOnClickListener { captureVideo() }

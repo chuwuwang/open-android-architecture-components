@@ -6,7 +6,15 @@ import android.content.IntentFilter
 import android.nfc.NdefMessage
 import android.nfc.NfcAdapter
 import android.nfc.Tag
-import android.nfc.tech.*
+import android.nfc.tech.IsoDep
+import android.nfc.tech.MifareClassic
+import android.nfc.tech.MifareUltralight
+import android.nfc.tech.Ndef
+import android.nfc.tech.NdefFormatable
+import android.nfc.tech.NfcA
+import android.nfc.tech.NfcB
+import android.nfc.tech.NfcF
+import android.nfc.tech.NfcV
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.nsz.kotlin.ux.common.ByteHelper
@@ -20,7 +28,7 @@ class ReaderM1CardActivity : AppCompatActivity(), CoroutineScope by MainScope() 
 
     private val pendingIntent: PendingIntent by lazy {
         val intent = Intent(this, javaClass).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
-        PendingIntent.getActivity(this, 0, intent, 0)
+        PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE)
     }
     private lateinit var adapter: NfcAdapter
 
@@ -46,7 +54,7 @@ class ReaderM1CardActivity : AppCompatActivity(), CoroutineScope by MainScope() 
         arrayOf(MifareUltralight::class.java.name)
     )
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle ? ) {
         super.onCreate(savedInstanceState)
         initView()
     }
