@@ -23,6 +23,7 @@ class OpenSourceFragment : ViewBindingFragment<FragmentOpenSourceBinding>() {
             // startActivity<UssdActivity>()
             testAutoInjectKey()
         }
+        binding.mbWxDetail.setOnClickListener { startActivity<WXDetailActivity>() }
         binding.mbAsyncCommunication.setOnClickListener { startActivity<AsyncCommunicationActivity>() }
         binding.mbRealm.setOnClickListener { findNavController().navigate(R.id.action_openSourceFragment_to_realmFragment) }
         binding.mbSpannableString.setOnClickListener { findNavController().navigate(R.id.action_openSourceFragment_to_spannableStringFragment) }

@@ -188,6 +188,9 @@
         <activity
             android:name=".open.source.AsyncCommunicationActivity"
             android:exported="false" />
+        <activity
+            android:name=".open.source.WXDetailActivity"
+            android:exported="false" />
 
     </application>
 

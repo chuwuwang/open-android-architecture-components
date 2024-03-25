@@ -123,6 +123,9 @@ dependencies {
     // ftp
     implementation 'com.jcraft:jsch:0.1.55'
     implementation 'commons-net:commons-net:3.8.0'
+    // background library
+    implementation "com.github.JavaNoober.BackgroundLibrary:libraryx:1.7.6"
+    implementation 'io.github.weilianyang:RoundImageView:1.0.2'
 }
 
 protobuf {

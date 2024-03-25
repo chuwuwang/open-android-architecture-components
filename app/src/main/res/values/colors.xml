@@ -11,4 +11,9 @@
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
 
+    <color name="wx_time">#A3A3A3</color>
+    <color name="wx_author">#52628B</color>
+    <color name="wx_content">#131313</color>
+    <color name="wx_background">#EFEFEF</color>
+
 </resources>
