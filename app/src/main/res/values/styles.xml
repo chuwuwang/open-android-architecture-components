@@ -5,6 +5,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/wx_background</item>
 
+        <item name="android:navigationBarColor">#F5F5F5</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
     </style>
 
