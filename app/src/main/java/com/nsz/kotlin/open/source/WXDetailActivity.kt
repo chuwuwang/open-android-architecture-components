@@ -1,8 +1,10 @@
 package com.nsz.kotlin.open.source
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
@@ -26,32 +28,42 @@ class WXDetailActivity : AppCompatActivity() {
         initView()
     }
 
+    @SuppressLint("SetTextI18n")
     private fun initView() {
         authorDataList.add(R.drawable.ic_author)
         authorDataList.add(R.drawable.profile_46)
         val set = HashSet<Int>()
-        for (index in 1..60) {
-            val random = (0..111).random()
+        for (index in 1..48) {
+            val random = (0..112).random()
             val item = authorList[random]
             set.add(item)
+            if (index == 16) set.add(R.drawable.profile_126)
+            if (index == 17) set.add(R.drawable.profile_39)
         }
         authorDataList.addAll(set)
 
         val gridLayoutManager = GridLayoutManager(this, 9)
         val authorRecyclerView = findViewById<RecyclerView>(R.id.author_recycler_view)
-        authorRecyclerView.setLayoutManager(gridLayoutManager)
+        authorRecyclerView.layoutManager = gridLayoutManager
         authorRecyclerView.adapter = AuthorAdapter()
 
-        findViewById<TextView>(R.id.time_text).text = "2024年3月24号 13:26"
+        findViewById<TextView>(R.id.time_text).text = "2024年3月31号 10:34"
+        findViewById<TextView>(R.id.title_text).text = "合肥蜀山向日葵幼儿园#传统美食文化#茶文化   本期摇篮分享红楼梦美食——《茶泡饭》#传统文化 #美食 #健康饮食\n" +
+                "        曹雪芹写作《红楼梦》的前后，正是中国传统饮食文化的鼎盛时期。随着社会经济、文化的发展，中国的饮食业在清代的“康乾盛世”出现了极大的繁荣。《红楼梦》中对贾府的饮食作了细致传神的描写，据统计，《红楼梦》小说出现的美食多达180多种。                      《红楼梦》中提到的南方食俗还有六安茶、老君眉、龙井茶、普洱茶等南方茶饮。  茶艺是生活，是礼仪，更是文化，延承中华民族传统礼仪。"
+        findViewById<ImageView>(R.id.task_image).setImageResource(R.drawable.task_3)
 
-        var comment = Comment(R.drawable.ic_author, "zhou", "为完成学校任务，求各位大佬们继续点赞", "2024年3月24号 13:26")
-        commentDataList.add(comment)
-        comment = Comment(R.drawable.profile_8, "徐荣 - 商米", "哈哈，没想到", "2024年3月24号 13:26")
+        var comment = Comment(R.drawable.ic_author, "zhou", "为完成学校任务，求各位大佬们继续点赞", "2024年3月31号 10:32")
+        // commentDataList.add(comment)
+        comment = Comment(R.drawable.profile_126, "徐荣 - 商米", "哈哈，没想到", "2024年3月31号 14:10")
+        // commentDataList.add(comment)
+        comment = Comment(R.drawable.profile_47, "王聪 - 商米", "可以的，", "2024年3月31号 14:10")
+        // commentDataList.add(comment)
+        comment = Comment(R.drawable.profile_39, "陈实", "老倪，你变了", "2024年3月31号 13:48")
         commentDataList.add(comment)
 
         val linearLayoutManager = LinearLayoutManager(this)
         val commentRecyclerView = findViewById<RecyclerView>(R.id.comment_recycler_view)
-        commentRecyclerView.setLayoutManager(linearLayoutManager)
+        commentRecyclerView.layoutManager = linearLayoutManager
         commentRecyclerView.adapter = CommentAdapter()
     }
 
@@ -169,6 +181,7 @@ class WXDetailActivity : AppCompatActivity() {
         authorList.add(R.drawable.profile_123)
         authorList.add(R.drawable.profile_124)
         authorList.add(R.drawable.profile_125)
+        authorList.add(R.drawable.profile_126)
     }
 
     inner class AuthorAdapter : RecyclerView.Adapter<WXDetailActivity.AuthorViewHolder>() {

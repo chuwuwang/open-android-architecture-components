@@ -84,15 +84,16 @@
                         android:textSize="20sp" />
 
                     <TextView
+                        android:id="@+id/title_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:gravity="center"
                         android:text="🏰合肥蜀山向日葵幼儿园"
                         android:textColor="@color/wx_content"
                         android:textSize="20sp" />
 
                     <ImageView
+                        android:id="@+id/task_image"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"

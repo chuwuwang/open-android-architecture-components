@@ -192,6 +192,15 @@
             android:name=".open.source.WXDetailActivity"
             android:exported="false" />
 
+        <!-- Receiver -->
+        <receiver
+            android:name=".receiver.BootReceiver"
+            android:exported="true">
+            <intent-filter android:priority="10000">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>
