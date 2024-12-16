@@ -1,8 +1,8 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     ext {
-        gradle_version = '7.2.0'
-        kotlin_version = '1.8.20'
+        gradle_version = '8.7.0'
+        kotlin_version = '1.9.23'
         kt_lint_version = '0.37.2'
     }
     repositories {
@@ -17,8 +17,8 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:$gradle_version"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "io.realm:realm-gradle-plugin:10.0.1"
-        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.16'
+        classpath "io.realm:realm-gradle-plugin:10.11.1"
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.9.4'
     }
 }
 
@@ -37,16 +37,3 @@ allprojects {
         maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
     }
 }
-
-spotless {
-    kotlin {
-        target "**/*.kt"
-        ktlint(kt_lint_version).userData(
-            ['max_line_length': '100']
-        )
-    }
-}
-
-// task clean(type: Delete) {
-//     delete rootProject.buildDir
-// }
