@@ -6,7 +6,75 @@
     <aid-group
         android:category="payment"
         android:description="@string/nfc_hce_aid_desc">
+
         <aid-filter android:name="A00101010101" />
+
+        <aid-filter android:name="325041592E5359532E4444463031" android:description="@string/ppse" />
+        <aid-filter android:name="315041592E5359532E44444630" android:description="@string/pse" />
+
+        <aid-filter android:name="A0000000010001" android:description="@string/loyalty_card" />
+        <aid-filter android:name="A0000000011010" android:description="@string/cash_card" />
+        <aid-filter android:name="A0000000031010" android:description="@string/visa_credit_or_debit" />
+        <aid-filter android:name="A0000000032010" android:description="@string/visa_electron" />
+        <aid-filter android:name="A0000000032020" android:description="@string/v_pay" />
+        <aid-filter android:name="A0000000038010" android:description="@string/plus" />
+        <aid-filter android:name="A0000000041010" android:description="@string/mastercard_credit_or_debit" />
+        <aid-filter android:name="A0000000049999" android:description="@string/mastercard" />
+        <aid-filter android:name="A0000000043060" android:description="@string/maestro" />
+        <aid-filter android:name="A0000000046000" android:description="@string/cirrus_atm_card_only" />
+        <aid-filter android:name="A0000000048002" android:description="@string/chip_authentication_program_securecode" />
+        <aid-filter android:name="A0000000050001" android:description="@string/maestro_uk" />
+        <aid-filter android:name="A00000002501" android:description="@string/american_express" />
+        <aid-filter android:name="A000000025021001" android:description="@string/american_express" />
+        <aid-filter android:name="A000000790010502" android:description="@string/american_express_china_debit_and_credit_cards" />
+        <aid-filter android:name="A0000000980840" android:description="@string/visa_branded_card" />
+        <aid-filter android:name="A0000000042203" android:description="@string/mastercard_branded_card" />
+        <aid-filter android:name="A0000001524010" android:description="@string/discover_branded_card" />
+        <aid-filter android:name="A000000817002001" android:description="@string/store_card" />
+        <aid-filter android:name="A0000000291010" android:description="@string/atm_card" />
+        <aid-filter android:name="A0000000421010" android:description="@string/cb_credit_or_debit_card" />
+        <aid-filter android:name="A0000000422010" android:description="@string/cb_debit_card_only" />
+        <aid-filter android:name="A0000000651010" android:description="@string/japan_credit_bureau" />
+        <aid-filter android:name="A0000001211010" android:description="@string/dankort" />
+        <aid-filter android:name="A0000001214711" android:description="@string/visadankort" />
+        <aid-filter android:name="A0000001214712" android:description="@string/dankort_jspeedy" />
+        <aid-filter android:name="A0000001410001" android:description="@string/bancomat_pagobancomat" />
+        <aid-filter android:name="A0000001523010" android:description="@string/diners_club_discover" />
+        <aid-filter android:name="A0000001544442" android:description="@string/banricompras_debito" />
+        <aid-filter android:name="A0000002281010" android:description="@string/span" />
+        <aid-filter android:name="A0000002771010" android:description="@string/debit_card" />
+        <aid-filter android:name="A0000003241010" android:description="@string/zip" />
+        <aid-filter android:name="A000000333010101" android:description="@string/up_debit" />
+        <aid-filter android:name="A000000333010102" android:description="@string/up_credit" />
+        <aid-filter android:name="A000000333010103" android:description="@string/quasi_credit" />
+        <aid-filter android:name="A000000333010106" android:description="@string/electronic_cash" />
+        <aid-filter android:name="A000000333010104" android:description="@string/up_debit" />
+        <aid-filter android:name="A000000333010105" android:description="@string/up_debit" />
+        <aid-filter android:name="A000000333010107" android:description="@string/up_debit" />
+        <aid-filter android:name="A000000333010108" android:description="@string/up_debit" />
+        <aid-filter android:name="A000000333010109" android:description="@string/up_debit" />
+        <aid-filter android:name="A0000003591010028001" android:description="@string/girocard" />
+        <aid-filter android:name="A00000035910100380" android:description="@string/pagobancomat" />
+        <aid-filter android:name="A0000003710001" android:description="@string/verve" />
+        <aid-filter android:name="A0000004391010" android:description="@string/atm_card" />
+        <aid-filter android:name="A0000005241010" android:description="@string/rupay" />
+        <aid-filter android:name="A0000006300101" android:description="@string/dinube_payment_initiation_psd2" />
+        <aid-filter android:name="A0000006582010" android:description="@string/mir_debit" />
+        <aid-filter android:name="A0000006581010" android:description="@string/mir_credit" />
+        <aid-filter android:name="A0000004360100" android:description="@string/ticket_restaurant" />
+        <aid-filter android:name="A00000038410" android:description="@string/savings_debit_card" />
+        <aid-filter android:name="A00000038420" android:description="@string/cheque_debit_card" />
+        <aid-filter android:name="A000000337301000" android:description="@string/retrait" />
+        <aid-filter android:name="A000000337101000" android:description="@string/standard" />
+        <aid-filter android:name="A000000337102000" android:description="@string/classic" />
+        <aid-filter android:name="A000000337101001" android:description="@string/prepaye_online" />
+        <aid-filter android:name="A000000337102001" android:description="@string/prepaye_possible_offline" />
+        <aid-filter android:name="A000000337601001" android:description="@string/porte_monnaie_electronique" />
+        <aid-filter android:name="A000000732100123" android:description="@string/meeza_card" />
+        <aid-filter android:name="A0000005291010" android:description="@string/mercury_card" />
+        <aid-filter android:name="A000000632010105" android:description="@string/mot_electronic_purse" />
+        <aid-filter android:name="A000000632010106" android:description="@string/mot_electronic_cash" />
+
     </aid-group>
 
 </host-apdu-service>

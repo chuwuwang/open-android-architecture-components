@@ -90,7 +90,7 @@ class ReaderM1CardActivity : AppCompatActivity(), CoroutineScope by MainScope() 
         adapter.disableForegroundDispatch(this)
     }
 
-    override fun onNewIntent(intent: Intent?) {
+    override fun onNewIntent(intent: Intent) {
         CommonLog.e("onNewIntent")
         super.onNewIntent(intent)
         setIntent(intent)

@@ -9,6 +9,7 @@ import java.nio.charset.StandardCharsets
 class HCEService : HostApduService() {
 
     companion object {
+
         private const val HCE_CARD_AID = "A00101010101"
         private const val SELECT_AID_HEADER = "00A40400"
         private val SW_OK = byteArrayOf(
@@ -23,7 +24,7 @@ class HCEService : HostApduService() {
         CommonLog.e("onDeactivated: $reason")
     }
 
-    override fun processCommandApdu(commandApdu: ByteArray?, extras: Bundle?): ByteArray {
+    override fun processCommandApdu(commandApdu: ByteArray ? , extras: Bundle ? ): ByteArray {
         var hexString = ""
         if (commandApdu != null) {
             hexString = ByteHelper.bytes2HexString(commandApdu)
