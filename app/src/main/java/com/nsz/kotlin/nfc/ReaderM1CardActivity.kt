@@ -16,7 +16,9 @@ import android.nfc.tech.NfcB
 import android.nfc.tech.NfcF
 import android.nfc.tech.NfcV
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.nsz.kotlin.R
 import com.nsz.kotlin.ux.common.ByteHelper
 import com.nsz.kotlin.ux.common.CommonLog
 import kotlinx.coroutines.CoroutineScope
@@ -58,6 +60,7 @@ class ReaderM1CardActivity : AppCompatActivity(), CoroutineScope by MainScope() 
 
     override fun onCreate(savedInstanceState: Bundle ? ) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_nfc_test)
         initView()
     }
 
@@ -77,6 +80,31 @@ class ReaderM1CardActivity : AppCompatActivity(), CoroutineScope by MainScope() 
             finish()
         }
         nfcManager = NfcManager(this)
+
+        findViewById<View>(R.id.mb_start_read_card).setOnClickListener {
+            nfcManager.setReaderMode(true)
+        }
+        findViewById<View>(R.id.mb_stop_read_card).setOnClickListener {
+            nfcManager.setReaderMode(false)
+        }
+        findViewById<View>(R.id.mb_card_pse).setOnClickListener {
+            val selectPPSE = byteArrayOf(
+                0x00,
+                0xA4.toByte(),
+                0x04,
+                0x00,
+                0x07,
+                0xA0.toByte(),
+                0x00,
+                0x00,
+                0x00,
+                0x03,
+                0x10,
+                0x10,
+                0x00,
+            )
+            nfcManager.sendData(selectPPSE)
+        }
     }
 
     override fun onResume() {
@@ -97,11 +125,13 @@ class ReaderM1CardActivity : AppCompatActivity(), CoroutineScope by MainScope() 
 
     override fun onNewIntent(intent: Intent) {
         CommonLog.e("onNewIntent")
-        super.onNewIntent(intent)
-        setIntent(intent)
+        // super.onNewIntent(intent)
+        // setIntent(intent)
         if (NfcAdapter.ACTION_TECH_DISCOVERED == intent.action || NfcAdapter.ACTION_TAG_DISCOVERED == intent.action) {
             val tag = intent.getParcelableExtra<Tag>(NfcAdapter.EXTRA_TAG)
             nfcManager.onTagDiscovered(tag)
+        } else {
+            super.onNewIntent(intent)
         }
     }
 

@@ -9,7 +9,6 @@ import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.nfc.NfcAdapter;
 import android.nfc.Tag;
-import android.nfc.tech.IsoDep;
 import android.os.Handler;
 import android.os.Looper;
 import android.text.TextUtils;
@@ -17,8 +16,8 @@ import android.text.TextUtils;
 import com.github.devnied.emvnfccard.exception.CommunicationException;
 import com.github.devnied.emvnfccard.model.EmvCard;
 import com.github.devnied.emvnfccard.parser.EmvTemplate;
-import com.github.devnied.emvnfccard.parser.IProvider;
 import com.nsz.kotlin.nfc.reader.NFCTagReader;
+import com.nsz.kotlin.utils.Util;
 import com.nsz.kotlin.ux.common.ByteHelper;
 import com.nsz.kotlin.ux.common.CommonLog;
 
@@ -66,6 +65,10 @@ public class NfcManager implements NfcAdapter.ReaderCallback {
 
     @Override
     public void onTagDiscovered(Tag tag) {
+        if (isPaused) {
+            return;
+        }
+        isMaster = true;
         currentTag = tag;
 
         mReader = NFCTagReader.create(tag);
@@ -73,14 +76,11 @@ public class NfcManager implements NfcAdapter.ReaderCallback {
         mReader.connect();
 
         byte[] build = mReader.getConfig().build();
-
         String hexString = ByteHelper.bytes2HexString(build);
         CommonLog.e("tag: " + tag + " - " + hexString);
 
         // Create provider
-        IsoDep isoDep = IsoDep.get(tag);
-        Provider provider = new Provider();
-        provider.setmTagCom(isoDep);
+        Provider provider = new Provider(mReader);
         // Define config
         EmvTemplate.Config config = EmvTemplate.Config()
                 .setContactLess(true)           // Enable contact less reading (default: true)
@@ -99,9 +99,15 @@ public class NfcManager implements NfcAdapter.ReaderCallback {
             EmvCard emvCard = parser.readEmvCard();
             String string = emvCard.toString();
             CommonLog.e("EmvCard: " + string);
-        } catch (CommunicationException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void sendData(byte[] data) {
+        byte[] reply = mReader.transceive(data);
+        String hexString = ByteHelper.bytes2HexString(reply);
+        CommonLog.e("sendData: " + hexString);
     }
 
     private void enableForegroundDispatch() {
@@ -118,6 +124,7 @@ public class NfcManager implements NfcAdapter.ReaderCallback {
     private void enableDisableReaderMode() {
         if (mReaderMode) {
             int flags = NfcAdapter.FLAG_READER_NFC_A | NfcAdapter.FLAG_READER_NFC_B;
+            enableForegroundDispatch();
             mAdapter.enableReaderMode(mActivity, this, flags, null);
         } else {
             mAdapter.disableReaderMode(mActivity);
