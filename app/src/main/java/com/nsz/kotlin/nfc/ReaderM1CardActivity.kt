@@ -54,6 +54,8 @@ class ReaderM1CardActivity : AppCompatActivity(), CoroutineScope by MainScope() 
         arrayOf(MifareUltralight::class.java.name)
     )
 
+    private lateinit var nfcManager: NfcManager
+
     override fun onCreate(savedInstanceState: Bundle ? ) {
         super.onCreate(savedInstanceState)
         initView()
@@ -74,26 +76,33 @@ class ReaderM1CardActivity : AppCompatActivity(), CoroutineScope by MainScope() 
             CommonLog.e("设备不支持NFC")
             finish()
         }
+        nfcManager = NfcManager(this)
     }
 
     override fun onResume() {
         super.onResume()
         CommonLog.e("onResume")
-        adapter.enableForegroundDispatch(this, pendingIntent, null, null)
+        // adapter.enableForegroundDispatch(this, pendingIntent, null, null)
         // adapter.enableForegroundDispatch(this, pendingIntent, filters, techLists)
-        detection()
+        // detection()
+        nfcManager.onResume()
     }
 
     override fun onPause() {
         super.onPause()
         CommonLog.e("onPause")
-        adapter.disableForegroundDispatch(this)
+        // adapter.disableForegroundDispatch(this)
+        nfcManager.onPause()
     }
 
     override fun onNewIntent(intent: Intent) {
         CommonLog.e("onNewIntent")
         super.onNewIntent(intent)
         setIntent(intent)
+        if (NfcAdapter.ACTION_TECH_DISCOVERED == intent.action || NfcAdapter.ACTION_TAG_DISCOVERED == intent.action) {
+            val tag = intent.getParcelableExtra<Tag>(NfcAdapter.EXTRA_TAG)
+            nfcManager.onTagDiscovered(tag)
+        }
     }
 
     private fun detection() {

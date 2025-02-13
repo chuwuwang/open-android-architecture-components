@@ -5,9 +5,9 @@ import android.nfc.tech.IsoDep;
 
 import androidx.annotation.NonNull;
 
-import io.dxpay.remotenfc.supercard.nfc.config.ConfigBuilder;
-import io.dxpay.remotenfc.supercard.nfc.config.OptionType;
-import io.dxpay.remotenfc.supercard.nfc.config.Technologies;
+import com.nsz.kotlin.nfc.config.ConfigBuilder;
+import com.nsz.kotlin.nfc.config.OptionType;
+import com.nsz.kotlin.nfc.config.Technologies;
 
 /**
  * Implements an NFCTagReader using the IsoDep technology

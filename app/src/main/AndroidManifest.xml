@@ -146,6 +146,7 @@
         <activity
             android:name=".nfc.ReaderM1CardActivity"
             android:exported="true"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
             android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.nfc.action.ACTION_NDEF_DISCOVERED" />

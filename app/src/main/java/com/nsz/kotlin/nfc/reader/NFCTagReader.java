@@ -5,13 +5,13 @@ import android.nfc.tech.TagTechnology;
 
 import androidx.annotation.NonNull;
 
+import com.nsz.kotlin.nfc.config.ConfigBuilder;
+import com.nsz.kotlin.nfc.config.Technologies;
+
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.List;
-
-import io.dxpay.remotenfc.supercard.nfc.config.ConfigBuilder;
-import io.dxpay.remotenfc.supercard.nfc.config.Technologies;
 
 /**
  * Interface to all NFCTagReader-Classes.

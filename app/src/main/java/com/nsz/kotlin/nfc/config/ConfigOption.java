@@ -1,13 +1,14 @@
 package com.nsz.kotlin.nfc.config;
 
-import io.dxpay.remotenfc.supercard.util.Utils;
+import com.nsz.kotlin.utils.Util;
 
 /**
  * Represents a single NCI configuration option with an option code, its length and data
  */
 public class ConfigOption {
-    private final OptionType mID;
+
     private final byte[] mData;
+    private final OptionType mID;
 
     ConfigOption(OptionType ID, byte[] data) {
         mID = ID;
@@ -24,7 +25,7 @@ public class ConfigOption {
 
     public void push(byte[] data, int offset) {
         data[offset] = mID.getID();
-        data[offset + 1] = (byte)mData.length;
+        data[offset + 1] = (byte) mData.length;
 
         System.arraycopy(mData, 0, data, offset + 2, mData.length);
     }
@@ -34,7 +35,8 @@ public class ConfigOption {
         StringBuilder result = new StringBuilder();
 
         result.append("Type: ");
-        result.append(mID.toString());
+        String idString = mID.toString();
+        result.append(idString);
 
         if (mData.length > 1) {
             result.append(" (");
@@ -43,8 +45,10 @@ public class ConfigOption {
         }
 
         result.append(", Value: 0x");
-        result.append(Utils.bytesToHex(mData));
+        String hexString = Util.bytesToHex(mData);
+        result.append(hexString);
 
         return result.toString();
     }
+
 }

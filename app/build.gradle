@@ -11,7 +11,7 @@ android {
     namespace 'com.nsz.kotlin'
     defaultConfig {
         applicationId "com.nsz.ktx.strawberry"
-        minSdkVersion 21
+        minSdkVersion 24
         targetSdkVersion 34
         javaCompileOptions {
             annotationProcessorOptions {
@@ -126,6 +126,8 @@ dependencies {
     // background library
     implementation "com.github.JavaNoober.BackgroundLibrary:libraryx:1.7.6"
     implementation 'io.github.weilianyang:RoundImageView:1.0.2'
+    // NFC reader
+    implementation 'com.github.devnied.emvnfccard:library:3.0.1'
 }
 
 protobuf {

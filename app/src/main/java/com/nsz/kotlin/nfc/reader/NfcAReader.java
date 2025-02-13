@@ -5,8 +5,8 @@ import android.nfc.tech.NfcA;
 
 import androidx.annotation.NonNull;
 
-import io.dxpay.remotenfc.supercard.nfc.config.ConfigBuilder;
-import io.dxpay.remotenfc.supercard.nfc.config.OptionType;
+import com.nsz.kotlin.nfc.config.ConfigBuilder;
+import com.nsz.kotlin.nfc.config.OptionType;
 
 /**
  * Implements a NFCTagReader using the NfcA technology
