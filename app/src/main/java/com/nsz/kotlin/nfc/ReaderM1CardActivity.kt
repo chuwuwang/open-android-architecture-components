@@ -88,7 +88,7 @@ class ReaderM1CardActivity : AppCompatActivity(), CoroutineScope by MainScope() 
             nfcManager.setReaderMode(false)
         }
         findViewById<View>(R.id.mb_card_pse).setOnClickListener {
-            val selectPPSE = byteArrayOf(
+            var selectPPSE = byteArrayOf(
                 0x00,
                 0xA4.toByte(),
                 0x04,
@@ -103,6 +103,7 @@ class ReaderM1CardActivity : AppCompatActivity(), CoroutineScope by MainScope() 
                 0x10,
                 0x00,
             )
+            selectPPSE = ByteHelper.hexString2Bytes("00A404000E325041592E5359532E444446303100")
             nfcManager.sendData(selectPPSE)
         }
     }

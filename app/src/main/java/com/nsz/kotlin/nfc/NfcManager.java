@@ -148,6 +148,7 @@ public class NfcManager implements NfcAdapter.ReaderCallback {
 
     public void setReaderMode(boolean enabled) {
         mReaderMode = enabled;
+        isPaused = ! enabled;
         boolean bool = isEnabled();
         if (bool) {
             enableDisableReaderMode();

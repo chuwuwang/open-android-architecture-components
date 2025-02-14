@@ -24,17 +24,19 @@ class HCEService : HostApduService() {
         CommonLog.e("onDeactivated: $reason")
     }
 
-    override fun processCommandApdu(commandApdu: ByteArray ? , extras: Bundle ? ): ByteArray {
+    override fun processCommandApdu(commandApdu: ByteArray?, extras: Bundle ? ): ByteArray {
         var hexString = ""
         if (commandApdu != null) {
             hexString = ByteHelper.bytes2HexString(commandApdu)
         }
         CommonLog.e("processCommand hexString: $hexString")
+
         val string = ByteHelper.hexString2String(hexString)
         CommonLog.e("processCommand string: $string")
 
         val dataIn = "https://www.baidu.com/"
-        return dataIn.toByteArray(StandardCharsets.US_ASCII)
+        // return dataIn.toByteArray(StandardCharsets.US_ASCII)
+        return ByteHelper.hexString2Bytes("6F30840E325041592E5359532E4444463031A51EBF0C1B61194F07A0000000031010500B56697361204372656469748701019000")
     }
 
     private fun buildSelectAIDCommand(): ByteArray {
