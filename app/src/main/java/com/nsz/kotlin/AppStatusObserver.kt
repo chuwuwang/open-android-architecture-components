@@ -44,7 +44,9 @@ class AppStatusObserver : LifecycleObserver {
     }
 
     companion object {
+
         private const val TAG = "AppStatusObserver"
+
     }
 
 }

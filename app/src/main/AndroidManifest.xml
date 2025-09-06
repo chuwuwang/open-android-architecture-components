@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.nsz.kotlin"
-    tools:ignore="ScopedStorage">
+    package="com.nsz.kotlin">
 
-    <uses-feature
-        android:name="android.hardware.nfc"
-        android:required="true" />
-    <uses-feature
-        android:name="android.hardware.nfc.hce"
-        android:required="true" />
+    <uses-feature android:name="android.hardware.nfc" android:required="true" />
+    <uses-feature android:name="android.hardware.nfc.hce" android:required="true" />
 
     <uses-permission android:name="android.permission.NFC" />
 
@@ -47,101 +41,52 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".storage.SAFActivity"
-            android:exported="false" />
-        <activity
-            android:name=".storage.StorageActivity"
-            android:exported="false" />
-        <activity
-            android:name=".storage.ScopedStorageActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".thread.LaunchScopeActivity"
-            android:exported="false" />
-
         <!-- Android Architecture Components -->
-        <activity
-            android:name=".aac.AndroidArchitectureComponentsActivity"
-            android:exported="false" />
+        <activity android:name=".aac.AndroidArchitectureComponentsActivity" />
 
         <!-- Architecture -->
-        <activity
-            android:name=".aac.architecture.ArchitectureActivity"
-            android:exported="false" />
+        <activity android:name=".aac.architecture.ArchitectureActivity" />
 
         <!-- Room -->
-        <activity
-            android:name=".aac.architecture.room.RoomActivity"
-            android:exported="false" />
+        <activity android:name=".aac.architecture.room.RoomActivity" />
 
         <!-- Paging -->
-        <activity
-            android:name=".aac.architecture.paging.PagingActivity"
-            android:exported="false" />
+        <activity android:name=".aac.architecture.paging.PagingActivity" />
 
         <!-- LiveData -->
-        <activity
-            android:name=".aac.architecture.live.data.LiveDataActivity"
-            android:exported="false" />
+        <activity android:name=".aac.architecture.live.data.LiveDataActivity" />
 
         <!-- DataStore -->
-        <activity
-            android:name=".aac.architecture.data.store.DataStoreActivity"
-            android:exported="false" />
+        <activity android:name=".aac.architecture.data.store.DataStoreActivity" />
 
         <!-- Lifecycle -->
-        <activity
-            android:name=".aac.architecture.lifecycle.LifecycleActivity"
-            android:exported="false" />
+        <activity android:name=".aac.architecture.lifecycle.LifecycleActivity" />
 
         <!-- ViewMode -->
         <activity android:name=".aac.architecture.view.model.ViewModelActivity" />
 
-        <service
-            android:name=".aac.architecture.foreground.service.ForegroundService"
-            android:exported="false" />
-        <activity
-            android:name=".aac.architecture.foreground.service.ForegroundServiceActivity"
-            android:exported="false" />
+        <service android:name=".aac.architecture.foreground.service.ForegroundService" />
+        <activity android:name=".aac.architecture.foreground.service.ForegroundServiceActivity" />
 
         <!-- DataBinding -->
-        <activity
-            android:name=".aac.architecture.data.binding.DataBindingActivity"
-            android:exported="false" />
-        <activity
-            android:name=".aac.architecture.data.binding.DataBindingRecyclerViewActivity"
-            android:exported="false" />
+        <activity android:name=".aac.architecture.data.binding.DataBindingActivity" />
+        <activity android:name=".aac.architecture.data.binding.DataBindingRecyclerViewActivity" />
 
         <!-- UI -->
-        <activity
-            android:name=".aac.ui.UIActivity"
-            android:exported="false" />
-        <activity
-            android:name=".aac.ui.layout.LayoutActivity"
-            android:exported="false" />
+        <activity android:name=".aac.ui.UIActivity" />
+        <activity android:name=".aac.ui.layout.LayoutActivity" />
         <!-- Animation -->
-        <activity
-            android:name=".aac.ui.animation.AnimationActivity"
-            android:exported="false" />
-        <activity
-            android:name=".aac.ui.animation.BounceInterpolatorActivity"
-            android:exported="false" />
+        <activity android:name=".aac.ui.animation.AnimationActivity" />
+        <activity android:name=".aac.ui.animation.BounceInterpolatorActivity" />
 
         <!-- Behavior -->
-        <activity
-            android:name=".aac.behavior.BehaviorActivity"
-            android:exported="false" />
-        <activity
-            android:name=".aac.behavior.CameraXActivity"
-            android:exported="false" />
+        <activity android:name=".aac.behavior.BehaviorActivity" />
+        <activity android:name=".aac.behavior.CameraXActivity" />
+        <!--/////////////////////////////////////////////////////////////////////////////////////-->
         <!--/////////////////////////////////////////////////////////////////////////////////////-->
 
         <!-- NFC Function -->
-        <activity
-            android:name=".nfc.NFCActivity"
-            android:exported="false" />
+        <activity android:name=".nfc.NFCActivity" />
         <activity
             android:name=".nfc.ReaderM1CardActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
@@ -162,9 +107,7 @@
                 android:name="android.nfc.action.TECH_DISCOVERED"
                 android:resource="@xml/nfc_tech_filter" />
         </activity>
-        <activity
-            android:name=".nfc.HCEActivity"
-            android:exported="false" />
+        <activity android:name=".nfc.HCEActivity" />
 
         <service
             android:name=".nfc.HCEService"
@@ -178,20 +121,20 @@
                 android:name="android.nfc.cardemulation.host_apdu_service"
                 android:resource="@xml/nfc_hce_aid_group" />
         </service>
+        <!--/////////////////////////////////////////////////////////////////////////////////////-->
+        <!--/////////////////////////////////////////////////////////////////////////////////////-->
 
         <!-- Open Source -->
-        <activity
-            android:name=".open.source.OpenSourceActivity"
-            android:exported="false" />
-        <activity
-            android:name=".open.source.UssdActivity"
-            android:exported="false" />
-        <activity
-            android:name=".open.source.AsyncCommunicationActivity"
-            android:exported="false" />
-        <activity
-            android:name=".open.source.WXDetailActivity"
-            android:exported="false" />
+        <activity android:name=".open.source.OpenSourceActivity" />
+        <activity android:name=".open.source.UssdActivity" />
+        <activity android:name=".open.source.WXDetailActivity" />
+        <activity android:name=".open.source.AsyncCommunicationActivity" />
+
+        <activity android:name=".storage.SAFActivity" />
+        <activity android:name=".storage.StorageActivity" />
+        <activity android:name=".storage.ScopedStorageActivity" />
+
+        <activity android:name=".thread.LaunchScopeActivity" />
 
         <!-- Receiver -->
         <receiver
