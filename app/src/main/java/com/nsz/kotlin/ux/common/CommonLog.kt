@@ -56,7 +56,7 @@ object CommonLog {
         val className = stackTrace[index].fileName
         var methodName = stackTrace[index].methodName
         val lineNumber = stackTrace[index].lineNumber
-        methodName = methodName.substring(0, 1).toUpperCase() + methodName.substring(1)
+        methodName = methodName.substring(0, 1).uppercase() + methodName.substring(1)
         val sb = StringBuilder()
         sb.append("[ (")
             .append(className)

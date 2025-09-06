@@ -24,7 +24,7 @@ class MainActivity : PermissionsActivity() {
     private fun initView() {
         LoginInfo.Login.newBuilder().setAccount("01").setPassword("123456").build()
         binding.mbScopedStorage.setOnClickListener {
-            val intent = Intent(this@MainActivity, StorageActivity::class.java)
+            val intent = Intent(this, StorageActivity::class.java)
             startActivity(intent)
         }
         binding.mbNfc.setOnClickListener { startActivity<NFCActivity>() }

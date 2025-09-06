@@ -1,6 +1,7 @@
 package com.nsz.kotlin.open.source
 
 import android.util.Log
+import com.koushikdutta.async.http.body.AsyncHttpRequestBody
 import com.koushikdutta.async.http.server.AsyncHttpServer
 import com.koushikdutta.async.http.server.AsyncHttpServerRequest
 import com.koushikdutta.async.http.server.AsyncHttpServerResponse
@@ -26,7 +27,7 @@ object HttpServerKernel : HttpServerRequestCallback {
     override fun onRequest(request: AsyncHttpServerRequest ?, response: AsyncHttpServerResponse ? ) {
         Log.e(TAG, "request:$request response:$response")
         if (request != null) {
-            val body = request.body
+            val body: AsyncHttpRequestBody<*> = request.getBody()
             val path = request.path
             val query = request.query
             val method = request.method
