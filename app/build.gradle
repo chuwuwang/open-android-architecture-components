@@ -22,8 +22,8 @@ android {
                 ]
             }
         }
-        versionCode 9
-        versionName "1.1.9"
+        versionCode 10
+        versionName "1.2.10"
     }
     buildTypes {
         debug {
@@ -136,6 +136,12 @@ dependencies {
     // NFC reader
     implementation 'com.github.devnied.emvnfccard:library:3.0.1'
 
+    ///////////////////////////////// Performance Monitor  /////////////////////////////////////////
+    // sand hook
+    implementation 'com.swift.sandhook:hooklib:4.2.1'
+    // need for android 11
+    implementation 'com.swift.sandhook:nativehook:4.2.1'
+    implementation 'com.swift.sandhook:xposedcompat:4.2.0'
 }
 
 protobuf {

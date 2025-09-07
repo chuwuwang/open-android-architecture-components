@@ -16,8 +16,8 @@ object CommonLog {
 
     private var LEVEL = V
 
-    fun setLevel(Level: Int) {
-        LEVEL = Level
+    fun setLevel(level: Int) {
+        LEVEL = level
     }
 
     fun v(msg: String, tag: String = TAG) {
