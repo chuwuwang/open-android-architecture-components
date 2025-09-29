@@ -1,14 +1,11 @@
 package com.nsz.kotlin
 
-import android.content.Intent
 import android.os.Bundle
 import com.kotlin.demo.proto.LoginInfo
 import com.nsz.kotlin.aac.AndroidArchitectureComponentsActivity
 import com.nsz.kotlin.databinding.ActivityMainBinding
-import com.nsz.kotlin.nfc.NFCActivity
 import com.nsz.kotlin.open.source.OpenSourceActivity
-import com.nsz.kotlin.storage.StorageActivity
-import com.nsz.kotlin.thread.LaunchScopeActivity
+import com.nsz.kotlin.performance.PerformanceEnhancementActivity
 import com.nsz.kotlin.ux.common.startActivity
 
 class MainActivity : PermissionsActivity() {
@@ -23,14 +20,10 @@ class MainActivity : PermissionsActivity() {
 
     private fun initView() {
         LoginInfo.Login.newBuilder().setAccount("01").setPassword("123456").build()
-        binding.mbScopedStorage.setOnClickListener {
-            val intent = Intent(this, StorageActivity::class.java)
-            startActivity(intent)
-        }
-        binding.mbNfc.setOnClickListener { startActivity<NFCActivity>() }
-        binding.mbThread.setOnClickListener { startActivity<LaunchScopeActivity>() }
-        binding.mbOpenSource.setOnClickListener { startActivity<OpenSourceActivity>() }
-        binding.mbAac.setOnClickListener { startActivity<AndroidArchitectureComponentsActivity>() }
+        binding.btnOpenSource.setOnClickListener { startActivity<OpenSourceActivity>() }
+        binding.btnAdvancedSkill.setOnClickListener { startActivity<AdvancedSkillActivity>() }
+        binding.btnPerformanceEnhancement.setOnClickListener { startActivity<PerformanceEnhancementActivity>() }
+        binding.btnAndroidArchitectureComponent.setOnClickListener { startActivity<AndroidArchitectureComponentsActivity>() }
     }
 
 }

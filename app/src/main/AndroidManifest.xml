@@ -41,50 +41,44 @@
             </intent-filter>
         </activity>
 
+        <!--/////////////////////////////////////////////////////////////////////////////////////-->
+        <!--/////////////////////////////////////////////////////////////////////////////////////-->
         <!-- Android Architecture Components -->
         <activity android:name=".aac.AndroidArchitectureComponentsActivity" />
-
         <!-- Architecture -->
         <activity android:name=".aac.architecture.ArchitectureActivity" />
-
         <!-- Room -->
         <activity android:name=".aac.architecture.room.RoomActivity" />
-
         <!-- Paging -->
         <activity android:name=".aac.architecture.paging.PagingActivity" />
-
         <!-- LiveData -->
         <activity android:name=".aac.architecture.live.data.LiveDataActivity" />
-
         <!-- DataStore -->
         <activity android:name=".aac.architecture.data.store.DataStoreActivity" />
-
         <!-- Lifecycle -->
         <activity android:name=".aac.architecture.lifecycle.LifecycleActivity" />
-
         <!-- ViewMode -->
         <activity android:name=".aac.architecture.view.model.ViewModelActivity" />
-
-        <service android:name=".aac.architecture.foreground.service.ForegroundService" />
         <activity android:name=".aac.architecture.foreground.service.ForegroundServiceActivity" />
-
+        <service android:name=".aac.architecture.foreground.service.ForegroundService" />
         <!-- DataBinding -->
         <activity android:name=".aac.architecture.data.binding.DataBindingActivity" />
         <activity android:name=".aac.architecture.data.binding.DataBindingRecyclerViewActivity" />
-
         <!-- UI -->
         <activity android:name=".aac.ui.UIActivity" />
         <activity android:name=".aac.ui.layout.LayoutActivity" />
         <!-- Animation -->
         <activity android:name=".aac.ui.animation.AnimationActivity" />
         <activity android:name=".aac.ui.animation.BounceInterpolatorActivity" />
-
         <!-- Behavior -->
-        <activity android:name=".aac.behavior.BehaviorActivity" />
         <activity android:name=".aac.behavior.CameraXActivity" />
+        <activity android:name=".aac.behavior.BehaviorActivity" />
         <!--/////////////////////////////////////////////////////////////////////////////////////-->
         <!--/////////////////////////////////////////////////////////////////////////////////////-->
 
+        <!--/////////////////////////////////////////////////////////////////////////////////////-->
+        <!--/////////////////////////////////////////////////////////////////////////////////////-->
+        <activity android:name=".AdvancedSkillActivity" />
         <!-- NFC Function -->
         <activity android:name=".nfc.NFCActivity" />
         <activity
@@ -121,21 +115,37 @@
                 android:name="android.nfc.cardemulation.host_apdu_service"
                 android:resource="@xml/nfc_hce_aid_group" />
         </service>
+
+        <!-- Scoped Storage -->
+        <activity android:name=".storage.SAFActivity" />
+        <activity android:name=".storage.StorageActivity" />
+        <activity android:name=".storage.ScopedStorageActivity" />
+
+        <!-- Thread -->
+        <activity android:name=".thread.LaunchScopeActivity" />
         <!--/////////////////////////////////////////////////////////////////////////////////////-->
         <!--/////////////////////////////////////////////////////////////////////////////////////-->
 
+        <!--/////////////////////////////////////////////////////////////////////////////////////-->
+        <!--/////////////////////////////////////////////////////////////////////////////////////-->
+        <!-- Performance Enhancement -->
+        <activity android:name=".performance.PerformanceEnhancementActivity" />
+        <activity android:name=".performance.monitor.AntiDebugActivity" />
+        <!--/////////////////////////////////////////////////////////////////////////////////////-->
+        <!--/////////////////////////////////////////////////////////////////////////////////////-->
+
+        <!--/////////////////////////////////////////////////////////////////////////////////////-->
+        <!--/////////////////////////////////////////////////////////////////////////////////////-->
         <!-- Open Source -->
         <activity android:name=".open.source.OpenSourceActivity" />
         <activity android:name=".open.source.UssdActivity" />
         <activity android:name=".open.source.WXDetailActivity" />
         <activity android:name=".open.source.AsyncCommunicationActivity" />
+        <!--/////////////////////////////////////////////////////////////////////////////////////-->
+        <!--/////////////////////////////////////////////////////////////////////////////////////-->
 
-        <activity android:name=".storage.SAFActivity" />
-        <activity android:name=".storage.StorageActivity" />
-        <activity android:name=".storage.ScopedStorageActivity" />
-
-        <activity android:name=".thread.LaunchScopeActivity" />
-
+        <!--/////////////////////////////////////////////////////////////////////////////////////-->
+        <!--/////////////////////////////////////////////////////////////////////////////////////-->
         <!-- Receiver -->
         <receiver
             android:name=".receiver.BootReceiver"
@@ -144,7 +154,8 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
-
+        <!--/////////////////////////////////////////////////////////////////////////////////////-->
+        <!--/////////////////////////////////////////////////////////////////////////////////////-->
     </application>
 
 </manifest>

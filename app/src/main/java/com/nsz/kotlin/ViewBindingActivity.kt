@@ -22,7 +22,7 @@ abstract class ViewBindingActivity<T : ViewBinding> : AppCompatActivity() {
             binding = method.invoke(null, layoutInflater) as T
             setContentView(binding.root)
         }
-        init()
+        binding.apply { init() }
     }
 
 }

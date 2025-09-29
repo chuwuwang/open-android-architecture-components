@@ -8,46 +8,35 @@
     android:paddingEnd="16dp">
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_android_architecture_component"
+        android:id="@+id/btn_nfc"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginTop="16dp"
         android:gravity="center"
         android:letterSpacing="0.15"
-        android:text="Android Architecture Components"
+        android:text="NFC"
         android:textAppearance="?android:attr/textAppearance"
         android:textColor="@android:color/white"
         android:textSize="14sp" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_performance_enhancement"
+        android:id="@+id/btn_coroutines"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:gravity="center"
         android:letterSpacing="0.15"
-        android:text="Performance Enhancements"
+        android:text="Coroutines"
         android:textAppearance="?android:attr/textAppearance"
         android:textColor="@android:color/white"
         android:textSize="14sp" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_advanced_skill"
+        android:id="@+id/btn_storage"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:gravity="center"
         android:letterSpacing="0.15"
-        android:text="Advanced Skills"
-        android:textAppearance="?android:attr/textAppearance"
-        android:textColor="@android:color/white"
-        android:textSize="14sp" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_open_source"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:gravity="center"
-        android:letterSpacing="0.15"
-        android:text="Open Source"
+        android:text="Storage"
         android:textAppearance="?android:attr/textAppearance"
         android:textColor="@android:color/white"
         android:textSize="14sp" />
